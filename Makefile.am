@@ -232,3 +232,13 @@ test-gen-deu-fin: all
 test-voc: test-gen-fin-deu \
 	      test-gen-deu-fin
 
+
+# gh page targets
+#
+if CAN_SAXON
+$(BASENAME).$(PREFIX1).html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
+	$(SAXON) -s:$< dix2html.xsl from=Finnish to=German > $@
+
+$(BASENAME).$(PREFIX2).html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
+	$(SAXON) -s:$< dix2html.xsl from=German to=Finnish invert=true > $@
+endif
