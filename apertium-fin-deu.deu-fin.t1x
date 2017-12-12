@@ -403,6 +403,9 @@
       <attr-item tags="infma"/>
       <attr-item tags="ger"/>
     </def-attr>
+    <def-attr n="a_conneg">
+      <attr-item tags="conneg"/>
+    </def-attr>
   </section-def-attrs>
   <!-- }}}
         {{{ vars -->
@@ -504,7 +507,30 @@
         </when>
         <when>
           <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="sp"/></equal>
+              <equal><clip pos="1" side="tl" part="a_case"/><lit-tag v="gen"/></equal>
+              <equal><clip pos="1" side="tl" part="lem"/><lit v="mikä"/></equal>
+            </and>
+          </test>
+          <let>
+            <var n="number"/><lit-tag v="sp"/>
+          </let>
+        </when>
+        <when>
+          <test>
             <equal><clip pos="1" side="tl" part="lem"/><lit v="koko"/></equal>
+          </test>
+          <let>
+            <var n="number"/><lit v=""/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <and>
+              <equal><var n="tense"/><lit-tag v="pri"/></equal>
+              <equal><clip pos="1" side="tl" part="a_conneg"/><lit-tag v="conneg"/></equal>
+            </and>
           </test>
           <let>
             <var n="number"/><lit v=""/>
@@ -1069,13 +1095,59 @@
             <equal><clip pos="1" side="tl" part="a_nominal"/><lit-tag v="n.compound-only-L"/></equal>
           </test>
           <let>
-            <var n="compstuff"/><lit v=""/>
+            <var n="compstuff"/><lit-tag v="cmp"/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <or>
+             <equal><clip pos="1" side="tl" part="lem"/><lit v="yhteis"/></equal>
+             <equal><clip pos="1" side="tl" part="lem"/><lit v="lähi"/></equal>
+           </or>
+          </test>
+          <let>
+            <var n="compstuff"/><lit-tag v="compound-only-L"/>
           </let>
         </when>
         <!-- regular -->
         <otherwise>
           <let>
             <var n="compstuff"/><lit-tag v="sg.gen"/>
+          </let>
+        </otherwise>
+      </choose>
+    </def-macro>
+    <def-macro n="conneg-mangler" npar="1">
+      <choose>
+        <when>
+          <test>
+            <equal><clip pos="1" side="sl" part="a_tense"/><lit-tag v="prs"/></equal>
+          </test>
+          <let>
+            <!-- XXX: sp-->
+            <var n="number"/><lit v=""/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="sg"/></equal>
+          </test>
+          <let>
+            <var n="number"/><lit-tag v="sg"/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="pl"/></equal>
+          </test>
+          <let>
+            <var n="number"/><lit-tag v="pl"/>
+          </let>
+        </when>
+        <otherwise>
+          <let>
+            <!-- XXX: sp -->
+            <var n="number"/><lit v=""/>
           </let>
         </otherwise>
       </choose>
@@ -2513,7 +2585,7 @@
         <call-macro n="pers-mangler">
           <with-param pos="1"/>
         </call-macro>
-        <call-macro n="number-mangler">
+        <call-macro n="conneg-mangler">
           <with-param pos="1"/>
         </call-macro>
         <out>
@@ -2533,6 +2605,7 @@
               <clip pos="1" side="tl" part="a_verb"/>
               <lit-tag v="actv"/>
               <var n="tense"/>
+              <var n="number"/>
               <lit-tag v="conneg"/>
             </lu>
           </chunk>
@@ -2551,7 +2624,7 @@
         <call-macro n="pers-mangler">
           <with-param pos="2"/>
         </call-macro>
-        <call-macro n="number-mangler">
+        <call-macro n="conneg-mangler">
           <with-param pos="2"/>
         </call-macro>
         <out>
@@ -2571,6 +2644,7 @@
               <clip pos="2" side="tl" part="a_verb"/>
               <lit-tag v="actv"/>
               <var n="tense"/>
+              <var n="number"/>
               <lit-tag v="conneg"/>
             </lu>
           </chunk>
@@ -2593,6 +2667,9 @@
         <call-macro n="case-mangler">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="compstuff-mangler">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <chunk name="NP" case="caseFirstWord">
             <tags>
@@ -2610,8 +2687,7 @@
             <lu>
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_nominal"/>
-              <clip pos="1" side="tl" part="a_number"/>
-              <lit-tag v="gen"/>
+              <var n="compstuff"/>
             </lu>
             <!-- no space -->
             <lu>
@@ -2988,6 +3064,9 @@
         <pattern-item n="noun"/>
       </pattern>
       <action>
+        <call-macro n="compstuff-mangler">
+          <with-param pos="1"/>
+        </call-macro>
         <call-macro n="case-mangler">
           <with-param pos="2"/>
         </call-macro>
@@ -2999,8 +3078,7 @@
             <lu>
               <clip pos="1" side="tl" part="lem"/>
               <clip pos="1" side="tl" part="a_nominal"/>
-              <clip pos="1" side="tl" part="a_number"/>
-              <lit-tag v="gen"/>
+              <var n="compstuff"/>
             </lu>
               <!-- no blank -->
             <lu>
