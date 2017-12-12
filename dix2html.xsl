@@ -102,11 +102,19 @@
   </xsl:template>
 
   <xsl:template match="section">
-    <h3><xsl:value-of select="@type"/></h3>
+    <h3>
+      <xsl:attribute name="id">
+        <xsl:value-of select="@type"/>
+      </xsl:attribute>
+      <xsl:value-of select="@type"/>
+    </h3>
     <table>
       <thead>
+        <th>RL</th>
         <th><xsl:value-of select="$from"/></th>
+        <th>C</th>
         <th><xsl:value-of select="$to"/></th>
+        <th>C</th>
         <th>Comments</th>
       </thead>
       <tbody>
@@ -128,11 +136,9 @@
 
   <xsl:template match="e">
     <tr>
+      <td><em><xsl:value-of select="@r"/></em></td>
       <xsl:apply-templates/>
-      <td>
-        <em><xsl:value-of select="@r"/></em>&#x0020;
-        <xsl:value-of select="@c"/>
-      </td>
+      <td><xsl:value-of select="@c"/></td>
     </tr>
   </xsl:template>
 
@@ -140,26 +146,28 @@
     <xsl:choose>
       <xsl:when test="$invert='true'">
         <td><xsl:apply-templates select="r"/></td>
+        <td><xsl:apply-templates select="r/@c"/></td>
         <td><xsl:apply-templates select="l"/></td>
+        <td><xsl:apply-templates select="l/@c"/></td>
       </xsl:when>
       <xsl:otherwise>
         <td><xsl:apply-templates select="l"/></td>
+        <td><xsl:apply-templates select="l/@c"/></td>
         <td><xsl:apply-templates select="r"/></td>
+        <td><xsl:apply-templates select="r/@c"/></td>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <xsl:template match="i">
-    <td colspan="2"><xsl:apply-templates/></td>
+    <td colspan="4"><xsl:apply-templates/></td>
   </xsl:template>
 
   <xsl:template match="s">
     (<xsl:value-of select="@n"/>)
   </xsl:template>
 
-  <xsl:template match="b">
-    &#160;
-  </xsl:template>
+  <xsl:template match="b">&#160;</xsl:template>
 
   <xsl:template match="j">
     <strong style="color: red">+++</strong>
