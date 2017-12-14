@@ -236,9 +236,13 @@ test-voc: test-gen-fin-deu \
 # gh page targets
 #
 if CAN_SAXON
-$(BASENAME).$(PREFIX1).html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
+$(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
 	$(SAXON) -s:$< dix2html.xsl from=Finnish to=German > $@
 
-$(BASENAME).$(PREFIX2).html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
+$(BASENAME).$(PREFIX2).dix.html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
 	$(SAXON) -s:$< dix2html.xsl from=German to=Finnish invert=true > $@
+
+$(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x tix2html.xsl
+	$(SAXON) -s:$< tix2html.xsl > $@
+
 endif

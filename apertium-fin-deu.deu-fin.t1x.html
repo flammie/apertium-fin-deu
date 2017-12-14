@@ -1,0 +1,5380 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width">
+      <title>apertium-fin-deu
+         : Apertium-fin-deu
+         
+      </title>
+      <meta name="description" content="Finnish–German transfer for rule-based machine translation">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/apertium-fin-deu/css/syntax.css">
+      <link rel="stylesheet" href="/apertium-fin-deu/css/main.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div id="header" class="col-sm-12">
+               <h4><a class="brand" href="/apertium-fin-deu/">apertium-fin-deu</a><small>Finnish–German transfer for rule-based
+                     machine translation</small></h4>
+            </div>
+         </div>
+         <div class="row">
+            <div id="navigation" class="col-sm-2">
+               <nav>
+                  <ul class="nav nav-list">
+                     <li><a href="/apertium-fin-deu/">Home</a></li>
+                     <li><a class="external" href="//github.com/flammie/apertium-fin-deu/#readme">README</a></li>
+                     <li><a href="/apertium-fin-deu/statistics.html">Statistics</a></li>
+                  </ul>
+               </nav>
+            </div>
+            <div id="content" class="col-sm-10">
+               <h1 id="dictionary">Transfer visualisation:
+                  Apertium-fin-deu–Finnish–German dictionary and RBMT resources
+                  
+               </h1>
+               <p style="font-variant: italic">
+                  This is a visualisation of an apertium transfer system
+                  
+               </p>
+               
+               
+               
+               <h2>Categories (parts of chunks)</h2>
+               <p>
+                  These are the categories Apertium is using in order to chunk, re-order
+                  and transfer lexemes.
+                  
+               </p>
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Category</th>
+                        <th>Items</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     
+                     
+                     <tr>
+                        <td>desomalieren2np</td>
+                        <td>
+                           <ul>
+                              
+                              <li>somalieren<code>&lt;vblex.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>deadp2np</td>
+                        <td>
+                           <ul>
+                              
+                              <li>de<code>&lt;pr.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>dest2np</td>
+                        <td>
+                           <ul>
+                              
+                              <li>st.<code>&lt;abbr&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>soviele2np</td>
+                        <td>
+                           <ul>
+                              
+                              <li>so viele<code>&lt;det.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>ex2np</td>
+                        <td>
+                           <ul>
+                              
+                              <li>ex<code>&lt;adv&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>nochein2np</td>
+                        <td>
+                           <ul>
+                              
+                              <li>noch ein<code>&lt;det.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     
+                     <tr>
+                        <td>um</td>
+                        <td>
+                           <ul>
+                              
+                              <li>um<code>&lt;cnjsub&gt;</code></li>
+                              
+                              <li>um<code>&lt;pr.*&gt;</code></li>
+                              
+                              <li>um<code>&lt;pr.acc&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>seit</td>
+                        <td>
+                           <ul>
+                              
+                              <li>seit<code>&lt;pr.*&gt;</code></li>
+                              
+                              <li>seit<code>&lt;pr.dat&gt;</code></li>
+                              
+                              <li>seit<code>&lt;cnjsub&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>bevor</td>
+                        <td>
+                           <ul>
+                              
+                              <li>bevor<code>&lt;preadv&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>an</td>
+                        <td>
+                           <ul>
+                              
+                              <li>an<code>&lt;pr.*&gt;</code></li>
+                              
+                              <li>an<code>&lt;pr.dat&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>ab</td>
+                        <td>
+                           <ul>
+                              
+                              <li>ab<code>&lt;adv&gt;</code></li> 
+                              
+                              <li>ab<code>&lt;pr.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>bis</td>
+                        <td>
+                           <ul>
+                              
+                              <li>bis<code>&lt;cnjsub&gt;</code></li> 
+                              
+                              <li>bis<code>&lt;pr.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>gegen</td>
+                        <td>
+                           <ul>
+                              
+                              <li>gegen<code>&lt;pr.*&gt;</code></li>
+                              
+                              <li>gegen<code>&lt;pr.acc&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>uhr</td>
+                        <td>
+                           <ul>
+                              
+                              <li>Uhr<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>uhr<code>&lt;n.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>über</td>
+                        <td>
+                           <ul>
+                              
+                              <li>über<code>&lt;pr.*&gt;</code></li>
+                              
+                              <li>über<code>&lt;adv&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>nach</td>
+                        <td>
+                           <ul>
+                              
+                              <li>nach<code>&lt;pr.*&gt;</code></li>
+                              
+                              <li>nach<code>&lt;adv&gt;</code></li> 
+                              
+                              <li>nach<code>&lt;pprep.*&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>hinweg</td>
+                        <td>
+                           <ul>
+                              
+                              <li>hinweg<code>&lt;adv&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>leben</td>
+                        <td>
+                           <ul>
+                              
+                              <li>Leben<code>&lt;n.nt.*&gt;</code></li>
+                              
+                              
+                              <li>leben<code>&lt;n.nt.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>gekommen</td>
+                        <td>
+                           <ul>
+                              
+                              <li>kommen<code>&lt;vblex.pp&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>monat</td>
+                        <td>
+                           <ul>
+                              
+                              <li>Januar<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Februar<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>März<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>April<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Mai<code>&lt;np.*&gt;</code></li>
+                              
+                              <li>mai<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Juni<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Juli<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>August<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>September<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Oktober<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>November<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Dezember<code>&lt;n.*&gt;</code></li>
+                              
+                              
+                              <li>januar<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>februar<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>märz<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>april<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>mai<code>&lt;np.*&gt;</code></li>
+                              
+                              <li>juni<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>juli<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>august<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>september<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>oktober<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>november<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>dezember<code>&lt;n.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>zeitwort</td>
+                        <td>
+                           <ul>
+                              
+                              <li>Jahr<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Jahrzehnt<code>&lt;n.*&gt;</code></li>
+                              
+                              
+                              <li>jahr<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>jahrzehnt<code>&lt;n.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>informationwort</td>
+                        <td>
+                           <ul>
+                              
+                              <li>Angabe<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Ansicht<code>&lt;n.*&gt;</code></li>
+                              
+                              
+                              <li>angabe<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>ansicht<code>&lt;n.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>weder_cc</td>
+                        <td>
+                           <ul>
+                              
+                              <li>weder<code>&lt;cnjcoo&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>noch_cc</td>
+                        <td>
+                           <ul>
+                              
+                              <li>noch<code>&lt;cnjcoo&gt;</code></li>
+                              
+                              <li>noch<code>&lt;adv&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>werden</td>
+                        <td>
+                           <ul>
+                              
+                              <li>werden<code>&lt;vaux.*&gt;</code></li>
+                              
+                              <li>werden<code>&lt;vblex.*&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>als</td>
+                        <td>
+                           <ul>
+                              
+                              <li>als<code>&lt;adv&gt;</code></li>
+                              
+                              <li>als<code>&lt;cnjadv&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>wie</td>
+                        <td>
+                           <ul>
+                              
+                              <li>wie<code>&lt;adv&gt;</code></li>
+                              
+                              <li>wie<code>&lt;adv.itg&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>gehen</td>
+                        <td>
+                           <ul>
+                              
+                              <li>gehen<code>&lt;vblex.pri.p2.pl&gt;</code></li>
+                              
+                              <li>gehen<code>&lt;vblex.pri.p3.sg&gt;</code></li>
+                              
+                              <li>gehen<code>&lt;vblex.prs.p3.sg&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>es</td>
+                        <td>
+                           <ul>
+                              
+                              <li>es<code>&lt;prn.pers.p3.nt.sg.*&gt;</code></li>
+                              
+                              <li>prpers<code>&lt;prn.*.p3.nt.sg.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     
+                     <tr>
+                        <td>daynumber</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num.ord&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>noun</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n.*&gt;</code></li>
+                              
+                              <li><code>&lt;np.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>cmp</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n.*.cmp&gt;</code></li>
+                              
+                              <li><code>&lt;n.*.cmp.*&gt;</code></li>
+                              
+                              <li><code>&lt;atp.cmp&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>prn</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;prn.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>prnpers</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;prn.pers.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>prndem</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;prn.dem.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>np</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;np.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>nominal</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n.*&gt;</code></li>
+                              
+                              <li><code>&lt;np.*&gt;</code></li>
+                              
+                              <li><code>&lt;prn.pers.*&gt;</code></li> 
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>verbnegation</td>
+                        <td>
+                           <ul>
+                              
+                              <li>nicht<code>&lt;adv&gt;</code></li>
+                              
+                              <li>kein<code>&lt;adv&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>infinite</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vblex.inf&gt;</code></li>
+                              
+                              <li><code>&lt;vblex.ger.*&gt;</code></li>
+                              
+                              <li><code>&lt;vaux.inf&gt;</code></li>
+                              
+                              <li><code>&lt;vbser.inf&gt;</code></li>
+                              
+                              <li><code>&lt;vbhaver.inf&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>perfection</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vblex.*.pp&gt;</code></li>
+                              
+                              <li><code>&lt;vblex.pp&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>participle</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vblex.*.pp&gt;</code></li>
+                              
+                              <li><code>&lt;vblex.pp&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>haver</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vbhaver.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>adj</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;adj.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>adjvl</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;adj.*&gt;</code></li>
+                              
+                              <li><code>&lt;vblex.*.pp&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>adp</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;post.*&gt;</code></li>
+                              
+                              <li><code>&lt;pr.*&gt;</code></li>
+                              
+                              <li><code>&lt;post&gt;</code></li>
+                              
+                              <li><code>&lt;pr&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>poss</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;det.pos.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>art</td>
+                        <td>
+                           <ul>
+                              
+                              <li>der<code>&lt;det.*&gt;</code></li>
+                              
+                              <li>ein<code>&lt;det.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>det</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;det.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>cardinal</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num.card&gt;</code></li>
+                              
+                              <li><code>&lt;num.card.*&gt;</code></li>
+                              
+                              <li><code>&lt;num.pl.*&gt;</code></li>
+                              
+                              <li><code>&lt;num&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>plural</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n.*.pl.*&gt;</code></li>
+                              
+                              <li><code>&lt;np.*.pl.*&gt;</code></li>
+                              
+                              <li><code>&lt;prn.*.pl.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>num</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num.*&gt;</code></li>
+                              
+                              <li><code>&lt;num&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>multiplier</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num.card&gt;</code></li>
+                              
+                              <li><code>&lt;num.card.*&gt;</code></li>
+                              
+                              <li><code>&lt;num.pl.*&gt;</code></li>
+                              
+                              <li><code>&lt;num&gt;</code></li>
+                              
+                              <li>Milliarde<code>&lt;n.*&gt;</code></li>
+                              
+                              <li>Hundert<code>&lt;n.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>verb</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vblex.*&gt;</code></li>
+                              
+                              <li><code>&lt;vbser.*&gt;</code></li>
+                              
+                              <li><code>&lt;vbmod.*&gt;</code></li>
+                              
+                              <li><code>&lt;vaux.*&gt;</code></li>
+                              
+                              <li><code>&lt;vbhaver.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>auxiliary</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vbmod.*&gt;</code></li>
+                              
+                              <li><code>&lt;vaux.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>cnjcoo</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;cnjcoo&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>comma</td>
+                        <td>
+                           <ul>
+                              
+                              <li>,<code>&lt;cm&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>sent</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;sent&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     
+                  </tbody>
+               </table>
+               
+               
+               <h2>Attributes</h2>
+               <p>
+                  These are the morphological analysis value (tag) sets that can be
+                  processed in the transfer.
+                  
+               </p>
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Attribute set name</th>
+                        <th>Tags</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     
+                     <tr>
+                        <td>a_case</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;nom&gt;</code></li>
+                              
+                              <li><code>&lt;gen&gt;</code></li>
+                              
+                              <li><code>&lt;acc&gt;</code></li>
+                              
+                              <li><code>&lt;dat&gt;</code></li>
+                              
+                              <li><code>&lt;ine&gt;</code></li>
+                              
+                              <li><code>&lt;ela&gt;</code></li>
+                              
+                              <li><code>&lt;ill&gt;</code></li>
+                              
+                              <li><code>&lt;ade&gt;</code></li>
+                              
+                              <li><code>&lt;abl&gt;</code></li>
+                              
+                              <li><code>&lt;all&gt;</code></li>
+                              
+                              <li><code>&lt;par&gt;</code></li>
+                              
+                              <li><code>&lt;tra&gt;</code></li>
+                              
+                              <li><code>&lt;cmp&gt;</code></li>
+                              
+                              <li><code>&lt;lat&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_verb</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vblex&gt;</code></li>
+                              
+                              <li><code>&lt;vblex.neg&gt;</code></li>
+                              
+                              <li><code>&lt;vbser&gt;</code></li>
+                              
+                              <li><code>&lt;vbmod&gt;</code></li>
+                              
+                              <li><code>&lt;vaux&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_tense</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;prs&gt;</code></li>
+                              
+                              <li><code>&lt;pis&gt;</code></li>
+                              
+                              <li><code>&lt;pri&gt;</code></li>
+                              
+                              <li><code>&lt;pii&gt;</code></li>
+                              
+                              <li><code>&lt;past&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_adj</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;adj&gt;</code></li>
+                              
+                              <li><code>&lt;num.ord&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_comp</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;pos&gt;</code></li>
+                              
+                              <li><code>&lt;comp&gt;</code></li>
+                              
+                              <li><code>&lt;sup&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_adp</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;post&gt;</code></li>
+                              
+                              <li><code>&lt;pr&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_adv</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;adv&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_noun</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n&gt;</code></li>
+                              
+                              <li><code>&lt;n.acr&gt;</code></li>
+                              
+                              <li><code>&lt;n.compound-only-L&gt;</code></li>
+                              
+                              <li><code>&lt;det&gt;</code></li>
+                              
+                              <li><code>&lt;np.ant.m&gt;</code></li>
+                              
+                              <li><code>&lt;np.ant.f&gt;</code></li>
+                              
+                              <li><code>&lt;np.ant&gt;</code></li>
+                              
+                              <li><code>&lt;np.top&gt;</code></li>
+                              
+                              <li><code>&lt;np.top.use_blacklist&gt;</code></li>
+                              
+                              <li><code>&lt;np.al&gt;</code></li>
+                              
+                              <li><code>&lt;np&gt;</code></li>
+                              
+                              <li><code>&lt;np.acr&gt;</code></li>
+                              
+                              <li><code>&lt;np.acr.al&gt;</code></li>
+                              
+                              <li><code>&lt;np.top.acr&gt;</code></li>
+                              
+                              <li><code>&lt;np.al.acr&gt;</code></li>
+                              
+                              <li><code>&lt;np.org&gt;</code></li>
+                              
+                              <li><code>&lt;np.cog&gt;</code></li>
+                              
+                              <li><code>&lt;num.card&gt;</code></li>
+                              
+                              <li><code>&lt;prn&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_nominal</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n.acr&gt;</code></li>
+                              
+                              <li><code>&lt;n.compound-only-L&gt;</code></li>
+                              
+                              <li><code>&lt;n&gt;</code></li>
+                              
+                              <li><code>&lt;np.ant.m&gt;</code></li>
+                              
+                              <li><code>&lt;np.ant.f&gt;</code></li>
+                              
+                              <li><code>&lt;np.ant&gt;</code></li>
+                              
+                              <li><code>&lt;np.top&gt;</code></li>
+                              
+                              <li><code>&lt;np.top.use_blacklist&gt;</code></li>
+                              
+                              <li><code>&lt;np.cog&gt;</code></li>
+                              
+                              <li><code>&lt;np.org&gt;</code></li>
+                              
+                              <li><code>&lt;np.al&gt;</code></li>
+                              
+                              <li><code>&lt;np&gt;</code></li>
+                              
+                              <li><code>&lt;np.acr&gt;</code></li>
+                              
+                              <li><code>&lt;np.acr.al&gt;</code></li>
+                              
+                              <li><code>&lt;np.top.acr&gt;</code></li>
+                              
+                              <li><code>&lt;np.al.acr&gt;</code></li>
+                              
+                              <li><code>&lt;num.card&gt;</code></li>
+                              
+                              <li><code>&lt;det&gt;</code></li>
+                              
+                              <li><code>&lt;prn&gt;</code></li>
+                              
+                              <li><code>&lt;adj.pos&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_det</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;n&gt;</code></li>
+                              
+                              <li><code>&lt;num.card&gt;</code></li>
+                              
+                              <li><code>&lt;det&gt;</code></li>
+                              
+                              <li><code>&lt;prn&gt;</code></li>
+                              
+                              <li><code>&lt;adj.pos&gt;</code></li>
+                              
+                              <li><code>&lt;adv&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_prn</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;prn&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_number</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;sg&gt;</code></li>
+                              
+                              <li><code>&lt;sp&gt;</code></li>
+                              
+                              <li><code>&lt;pl&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_perf</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;pp&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_pers</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;p1.sg&gt;</code></li>
+                              
+                              <li><code>&lt;p2.sg&gt;</code></li>
+                              
+                              <li><code>&lt;p3.sg&gt;</code></li>
+                              
+                              <li><code>&lt;p1.pl&gt;</code></li>
+                              
+                              <li><code>&lt;p2.pl&gt;</code></li>
+                              
+                              <li><code>&lt;p3.pl&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_numtype</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;card&gt;</code></li>
+                              
+                              <li><code>&lt;nocard&gt;</code></li>
+                              
+                              <li><code>&lt;ord&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_num</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num&gt;</code></li>
+                              
+                              <li><code>&lt;num.use_nonstd&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_inf</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;inf&gt;</code></li>
+                              
+                              <li><code>&lt;infa&gt;</code></li>
+                              
+                              <li><code>&lt;infe&gt;</code></li>
+                              
+                              <li><code>&lt;infma&gt;</code></li>
+                              
+                              <li><code>&lt;ger&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_conneg</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;conneg&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                  </tbody>
+               </table>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <h2>Macros</h2>
+               <p>Macros are helper functions in apertium transfer files.</p>
+               
+               <h3>test</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+    let <em>number</em> := 
+    ""
+  
+    </code></pre>
+               <h3>comparison-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>tl[1]['a_adj']</em> =? 
+    &lt;num.ord&gt;
+  
+          )
+   then:
+       
+    let <em>comparison</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['a_comp']</em> =? 
+    &lt;comp&gt;
+  
+          )
+   then:
+       
+    let <em>comparison</em> := 
+    &lt;com&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['a_comp']</em> =? 
+    &lt;sup&gt;
+  
+          )
+   then:
+       
+    let <em>comparison</em> := 
+    &lt;sup&gt;
+  
+        
+    else:
+       
+          
+    let <em>comparison</em> := 
+    &lt;pos&gt;
+  
+        
+      
+    </code></pre>
+               <h3>voice-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>tl[1]['a_voice']</em> =? 
+    &lt;actv&gt;
+  
+          )
+   then:
+       
+    let <em>voice</em> := 
+    &lt;actv&gt;
+  
+        
+    if 
+    (
+            <em>tl[1]['a_voice']</em> =? 
+    &lt;pasv&gt;
+  
+          )
+   then:
+       
+    let <em>voice</em> := 
+    &lt;pasv&gt;
+  
+        
+    else:
+       
+          
+    let <em>voice</em> := 
+    &lt;actv&gt;
+  
+        
+      
+    </code></pre>
+               <h3>number-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+        
+    if 
+    (
+            
+              <em>tl[1]['a_number']</em> =? 
+    &lt;sp&gt;
+  
+              <em>tl[1]['a_case']</em> =? 
+    &lt;nom&gt;
+  
+              <em>tl[1]['lem']</em> =? 
+    "kaikki"
+  
+            
+          )
+   then:
+       
+    let <em>number</em> := 
+    &lt;sp&gt;
+  
+        
+    if 
+    (
+            
+              <em>tl[1]['a_number']</em> =? 
+    &lt;sp&gt;
+  
+              <em>tl[1]['a_case']</em> =? 
+    &lt;gen&gt;
+  
+              <em>tl[1]['lem']</em> =? 
+    "mikä"
+  
+            
+          )
+   then:
+       
+    let <em>number</em> := 
+    &lt;sp&gt;
+  
+        
+    if 
+    (
+            <em>tl[1]['lem']</em> =? 
+    "koko"
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    ""
+  
+        
+    if 
+    (
+            
+              <em>tense</em> =? 
+    &lt;pri&gt;
+  
+              <em>tl[1]['a_conneg']</em> =? 
+    &lt;conneg&gt;
+  
+            
+          )
+   then:
+       
+    let <em>number</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>tl[1]['a_nominal']</em> =? 
+    &lt;n.compound-only-L&gt;
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    ""
+  
+        
+        
+    if 
+    (
+            <em>tl[1]['a_number']</em> =? 
+    &lt;sg&gt;
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    &lt;sg&gt;
+  
+        
+    if 
+    (
+            <em>tl[1]['a_number']</em> =? 
+    &lt;pl&gt;
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    &lt;pl&gt;
+  
+        
+    else:
+       
+          
+    let <em>number</em> := 
+    &lt;sg&gt;
+  
+        
+      
+    </code></pre>
+               <h3>numtype-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>sl[1]['a_numtype']</em> =? 
+    &lt;card&gt;
+  
+          )
+   then:
+       
+    let <em>numtype</em> := 
+    &lt;card&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['a_numtype']</em> =? 
+    &lt;ord&gt;
+  
+          )
+   then:
+       
+    let <em>numtype</em> := 
+    &lt;ord&gt;
+  
+        
+    if 
+    (
+            <em>tl[1]['a_numtype']</em> =? 
+    &lt;nocard&gt;
+  
+          )
+   then:
+       
+    let <em>numtype</em> := 
+    ""
+  
+        
+    else:
+       
+          
+    let <em>numtype</em> := 
+    &lt;card&gt;
+  
+        
+      
+    </code></pre>
+               <h3>tensemood-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>tl[1]['lem']</em> =? 
+    "ei"
+  
+          )
+   then:
+       
+    let <em>tense</em> := 
+    ""
+  
+        
+    if 
+    (
+              <em>sl[1]['a_tense']</em> =? 
+    &lt;pii&gt;
+  
+          )
+   then:
+       
+    let <em>tense</em> := 
+    &lt;past&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_tense']</em> =? 
+    &lt;prs&gt;
+  
+          )
+   then:
+       
+    let <em>tense</em> := 
+    &lt;pri&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_tense']</em> =? 
+    &lt;pis&gt;
+  
+          )
+   then:
+       
+    let <em>tense</em> := 
+    &lt;pri&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_tense']</em> =? 
+    &lt;past&gt;
+  
+          )
+   then:
+       
+    let <em>tense</em> := 
+    &lt;past&gt;
+  
+        
+    else:
+       
+          
+    let <em>tense</em> := 
+    &lt;pri&gt;
+  
+        
+      
+    </code></pre>
+               <h3>pers-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+              <em>sl[1]['a_pers']</em> =? 
+    &lt;p1.sg&gt;
+  
+          )
+   then:
+       
+    let <em>pers</em> := 
+    &lt;p1.sg&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_pers']</em> =? 
+    &lt;p2.sg&gt;
+  
+          )
+   then:
+       
+    let <em>pers</em> := 
+    &lt;p2.sg&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_pers']</em> =? 
+    &lt;p3.sg&gt;
+  
+          )
+   then:
+       
+    let <em>pers</em> := 
+    &lt;p3.sg&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_pers']</em> =? 
+    &lt;p1.pl&gt;
+  
+          )
+   then:
+       
+    let <em>pers</em> := 
+    &lt;p1.pl&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_pers']</em> =? 
+    &lt;p2.pl&gt;
+  
+          )
+   then:
+       
+    let <em>pers</em> := 
+    &lt;p2.pl&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_pers']</em> =? 
+    &lt;p3.pl&gt;
+  
+          )
+   then:
+       
+    let <em>pers</em> := 
+    &lt;p3.pl&gt;
+  
+        
+    else:
+       
+          
+    let <em>pers</em> := 
+    &lt;p3.sg&gt;
+  
+        
+      
+    </code></pre>
+               <h3>case-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>tl[1]['lem']</em> =? 
+    "koko"
+  
+          )
+   then:
+       
+    let <em>case</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>tl[1]['a_nominal']</em> =? 
+    &lt;n.compound-only-L&gt;
+  
+          )
+   then:
+       
+    let <em>case</em> := 
+    ""
+  
+        
+        
+    if 
+    (
+            <em>sl[1]['a_case']</em> =? 
+    &lt;acc&gt;
+  
+          )
+   then:
+       
+    let  := 
+    &lt;gen&gt;
+  
+    let <em>case</em> := 
+    &lt;gen&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['a_case']</em> =? 
+    &lt;dat&gt;
+  
+          )
+   then:
+       
+    let  := 
+    &lt;gen&gt;
+  
+    let <em>case</em> := 
+    &lt;gen&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['a_case']</em> =? 
+    &lt;cmp&gt;
+  
+          )
+   then:
+       
+    let  := 
+    &lt;nom&gt;
+  
+    let <em>case</em> := 
+    &lt;nom&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['a_case']</em> =? 
+    &lt;gen&gt;
+  
+          )
+   then:
+       
+    let  := 
+    &lt;gen&gt;
+  
+    let <em>case</em> := 
+    &lt;gen&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['a_case']</em> =? 
+    ""
+  
+          )
+   then:
+       
+    let  := 
+    &lt;nom&gt;
+  
+    let <em>case</em> := 
+    &lt;nom&gt;
+  
+        
+        
+    else:
+       
+          
+    let  := 
+    &lt;nom&gt;
+  
+          
+    let <em>case</em> := 
+    &lt;nom&gt;
+  
+        
+      
+    </code></pre>
+               <h3>infinite-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+              <em>sl[1]['a_inf']</em> =? 
+    &lt;inf&gt;
+  
+          )
+   then:
+       
+    let  := 
+    &lt;infa&gt;
+  
+    let <em>case</em> := 
+    &lt;lat&gt;
+  
+        
+    if 
+    (
+              <em>sl[1]['a_inf']</em> =? 
+    &lt;ger&gt;
+  
+          )
+   then:
+       
+    let  := 
+    &lt;infma&gt;
+  
+    let <em>case</em> := 
+    &lt;ine&gt;
+  
+        
+      
+    </code></pre>
+               <h3>possessive-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "mein"
+  
+          )
+   then:
+       
+    let <em>prnmaybe</em> := 
+    ""
+  
+    let <em>poss</em> := 
+    &lt;pxsg1&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "dein"
+  
+          )
+   then:
+       
+    let <em>poss</em> := 
+    &lt;pxsg2&gt;
+  
+    let <em>prnmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "eure"
+  
+          )
+   then:
+       
+    let <em>poss</em> := 
+    &lt;pxsg2&gt;
+  
+    let <em>prnmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "unser"
+  
+          )
+   then:
+       
+    let <em>poss</em> := 
+    &lt;pxsg1&gt;
+  
+    let <em>prnmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "sein"
+  
+          )
+   then:
+       
+    let <em>poss</em> := 
+    &lt;pxsp3&gt;
+  
+    let <em>prnmaybe</em> := 
+        
+        
+    else:
+       
+          
+    let <em>poss</em> := 
+    &lt;pxsp3&gt;
+  
+          
+    let <em>prnmaybe</em> := 
+        
+      
+    </code></pre>
+               <h3>adp-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            
+              <em>sl[1]['lem']</em> =? 
+    "in"
+  
+              <em>sl[1]['a_case']</em> =? 
+    &lt;dat&gt;
+  
+            
+          )
+   then:
+       
+    let <em>adpmaybe</em> := 
+    ""
+  
+    let <em>adpcase</em> := 
+    &lt;ine&gt;
+  
+        
+    if 
+    (
+            
+              <em>sl[1]['lem']</em> =? 
+    "ab"
+  
+              <em>sl[1]['a_case']</em> =? 
+    &lt;dat&gt;
+  
+            
+          )
+   then:
+       
+    let <em>adpmaybe</em> := 
+    ""
+  
+    let <em>adpcase</em> := 
+    &lt;abl&gt;
+  
+        
+    if 
+    (
+            
+              <em>sl[1]['lem']</em> =? 
+    "in"
+  
+              <em>sl[1]['a_case']</em> =? 
+    &lt;acc&gt;
+  
+            
+          )
+   then:
+       
+    let <em>adpmaybe</em> := 
+    ""
+  
+    let <em>adpcase</em> := 
+    &lt;ill&gt;
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "auf"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ine&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "um"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;abl&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "aus"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ela&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "über"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ela&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "bei"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ade&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "von"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ela&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "bis"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ill&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "als"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ess&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "mit"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ade&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "zu"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;tra&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "an"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;abl&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "nach"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;ill&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>sl[1]['lem']</em> =? 
+    "ohne"
+  
+          )
+   then:
+       
+    let <em>adpcase</em> := 
+    &lt;abe&gt;
+  
+    let <em>adpmaybe</em> := 
+    ""
+  
+        
+        
+    else:
+       
+          
+    let <em>adpcase</em> := 
+    &lt;gen&gt;
+  
+          
+    let <em>adpmaybe</em> := 
+        
+      
+    </code></pre>
+               <h3>compstuff-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+        
+    if 
+    (
+            <em>tl[1]['a_nominal']</em> =? 
+    &lt;n.compound-only-L&gt;
+  
+          )
+   then:
+       
+    let <em>compstuff</em> := 
+    &lt;cmp&gt;
+  
+        
+    if 
+    (
+            
+             <em>tl[1]['lem']</em> =? 
+    "yhteis"
+  
+             <em>tl[1]['lem']</em> =? 
+    "lähi"
+  
+           
+          )
+   then:
+       
+    let <em>compstuff</em> := 
+    &lt;compound-only-L&gt;
+  
+        
+        
+    else:
+       
+          
+    let <em>compstuff</em> := 
+    &lt;sg.gen&gt;
+  
+        
+      
+    </code></pre>
+               <h3>conneg-mangler</h3>
+               <div>Parametres: 1</div><pre><code>
+      
+        
+    if 
+    (
+            <em>sl[1]['a_tense']</em> =? 
+    &lt;prs&gt;
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    ""
+  
+        
+    if 
+    (
+            <em>tl[1]['a_number']</em> =? 
+    &lt;sg&gt;
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    &lt;sg&gt;
+  
+        
+    if 
+    (
+            <em>tl[1]['a_number']</em> =? 
+    &lt;pl&gt;
+  
+          )
+   then:
+       
+    let <em>number</em> := 
+    &lt;pl&gt;
+  
+        
+    else:
+       
+          
+    let <em>number</em> := 
+    ""
+  
+        
+      
+    </code></pre>
+               
+               
+               <h2>Rules</h2>
+               <p>The actual rules concerning stuff.</p>
+               
+               
+               
+               <h3>ex2np: totally broken deu analysis of 'de'</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>ex2np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "ex"
+  
+              
+    &lt;n.sg.nom&gt;
+  
+            ]<sub>ex2NP
+              
+    &lt;NP.SG.NOM&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>nochein2np: totally broken deu analysis of 'de'</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>nochein2np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "yhä"
+  
+              
+    &lt;adv&gt;
+  
+            ]<sub>nochein2NP
+              
+    &lt;ADV&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>soviele2np: totally broken deu analysis of 'de'</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>soviele2np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "yhtä"
+  
+              
+    &lt;adv&gt;
+  
+            
+              
+    "paljon"
+  
+              
+    &lt;adv&gt;
+  
+            ]<sub>soviele2NP
+              
+    &lt;NP.SG.NOM&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>desomalieren2np: totally broken deu analysis of 'de'</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>desomalieren2np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "somali"
+  
+              
+    &lt;n.pl.gen&gt;
+  
+            ]<sub>DESOMALIEREN2NP
+              
+    &lt;NP.PL.NOM&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>deadp2np: totally broken deu analysis of 'de'</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>deadp2np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "de"
+  
+              
+    &lt;np.cog.sg.nom&gt;
+  
+            ]<sub>DEADP2NP
+              
+    &lt;NP.SG.NOM&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>dest2np: St. mismatched</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>dest2np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "St."
+  
+              
+    &lt;np.sg.nom&gt;
+  
+            ]<sub>DEST2NP
+              
+    &lt;NP.SG.NOM&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               <h3>weder adj noch adj: negv adj cnjcoo+negv adj</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>weder_cc</li>
+                  
+                  <li>adj</li>
+                  
+                  <li>noch_cc</li>
+                  
+                  <li>adj</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        comparison-mangler(
+          
+    $2
+        )
+  
+        comparison-mangler(
+          
+    $4
+        )
+  
+        case-mangler(
+          
+    $4
+        )
+  
+        
+    Output: 
+          
+    [
+              
+    "ei"
+  
+              
+    &lt;vblex.neg.actv.p3.sg&gt;
+  
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_adj']</em>
+              <em>comparison</em>
+              <em>number</em>
+              <em>case</em>
+            
+              
+    "ei"
+  
+              
+    &lt;vblex.neg.actv.p3.sg&gt;
+  
+              
+    "+ka"
+  
+              
+    &lt;enc&gt;
+  
+            
+              <em>tl[4]['lem']</em>
+              <em>tl[4]['a_adj']</em>
+              <em>comparison</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>AP
+                
+    &lt;CC&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>seit ZEIT bevor: AIKOIHIN</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>seit</li>
+                  
+                  <li>zeitwort</li>
+                  
+                  <li>bevor</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>    
+              <em>tl[2]['a_noun']</em> 
+              <em>number</em>                       
+              
+    &lt;ill&gt;
+                        
+            ]<sub>AdvP
+                
+    &lt;ADV&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>über ZEIT hinweg: AJAN mittaan</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>über</li>
+                  
+                  <li>zeitwort</li>
+                  
+                  <li>hinweg</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>    
+              <em>tl[2]['a_noun']</em> 
+              <em>number</em>                       
+              
+    &lt;gen&gt;
+                        
+            
+              
+    "mittaan"
+  
+              
+    &lt;adv&gt;
+  
+            ]<sub>AdvP
+                
+    &lt;ADV&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>nach INFORMATION: TIETOLÄHTEEN mukaan</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>nach</li>
+                  
+                  <li>informationwort</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>    
+              <em>tl[2]['a_noun']</em> 
+              <em>number</em>                       
+              
+    &lt;gen&gt;
+                        
+            
+              
+    "mukaan"
+  
+              
+    &lt;post&gt;
+  
+            ]<sub>AdvP
+                
+    &lt;ADV&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>um N.NN uhr: kello N.NN</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>um</li>
+                  
+                  <li>num</li>
+                  
+                  <li>uhr</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        numtype-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[3]['lem']</em> 
+              <em>tl[3]['a_nominal']</em>
+              
+    &lt;sg.nom&gt;
+  
+            
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>UhrP
+              
+    &lt;UHR&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>um leben gekommen: kuolla</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>um</li>
+                  
+                  <li>det</li>
+                  
+                  <li>leben</li>
+                  
+                  <li>gekommen</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "kuolla"
+  
+              
+    &lt;vblex.actv.pp.pos.nom.sg&gt;
+  
+            ]<sub>VP
+              
+    &lt;dead.becoming&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>gegen N.NN uhr: suunnilleen kello N.NN</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>gegen</li>
+                  
+                  <li>num</li>
+                  
+                  <li>uhr</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        numtype-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              
+    "suunnilleen"
+  
+              
+    &lt;post&gt;
+  
+            
+              <em>tl[3]['lem']</em> 
+              <em>tl[3]['a_nominal']</em>
+              
+    &lt;sg.nom&gt;
+  
+            
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>UhrP
+              
+    &lt;UHR&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>am NN. Monat: NN. kuuta</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>an</li>
+                  
+                  <li>art</li>
+                  
+                  <li>daynumber</li>
+                  
+                  <li>monat</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $3
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        numtype-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[3]['lem']</em> 
+              <em>tl[3]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              
+    &lt;ess&gt;
+  
+            
+              <em>tl[4]['lem']</em> 
+              <em>tl[4]['a_nominal']</em>
+              
+    &lt;sg.par&gt;
+  
+            ]<sub>MonatP
+              
+    &lt;MONAT&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>NN. Monat: NN. kuuta</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>daynumber</li>
+                  
+                  <li>monat</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        numtype-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              <em>case</em>
+            
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_nominal']</em>
+              
+    &lt;sg.par&gt;
+  
+            ]<sub>MonatP
+              
+    &lt;MONAT&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>N.NN uhr: kello N.NN</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>num</li>
+                  
+                  <li>uhr</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        numtype-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_nominal']</em>
+              
+    &lt;sg.nom&gt;
+  
+            
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>UhrP
+              
+    &lt;UHR&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>wie geht es: how goes</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>wie</li>
+                  
+                  <li>gehen</li>
+                  
+                  <li>es</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        infinite-mangler(
+          
+    $2
+        )
+  
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_adv']</em> 
+            
+              
+    "mennä"
+   
+              <em>tl[2]['a_verb']</em> 
+              
+    &lt;actv&gt;
+   
+              <em>tense</em> 
+              
+    &lt;p3.sg&gt;
+   
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;ADE&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>NP geht es: adessive goes</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>nominal</li>
+                  
+                  <li>gehen</li>
+                  
+                  <li>es</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        infinite-mangler(
+          
+    $2
+        )
+  
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_nominal']</em> 
+              <em>number</em>
+              
+    &lt;ade&gt;
+  
+            
+              
+    "mennä"
+   
+              <em>tl[2]['a_verb']</em> 
+              
+    &lt;actv&gt;
+   
+              <em>tense</em> 
+              
+    &lt;p3.sg&gt;
+   
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;ADE&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>ab NN: NN:sta alkaen</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>ab</li>
+                  
+                  <li>num</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        numtype-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              
+    &lt;ela&gt;
+  
+            
+              
+    "alkaen"
+  
+              
+    &lt;post&gt;
+  
+            ]<sub>NumP
+              
+    &lt;NUM&gt;
+  
+              
+    &lt;ela&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>bis NN: NN:ään asti</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>bis</li>
+                  
+                  <li>num</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        numtype-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_num']</em>
+              <em>numtype</em>
+              <em>number</em>
+              
+    &lt;ill&gt;
+  
+            
+              
+    "asti"
+  
+              
+    &lt;post&gt;
+  
+            ]<sub>NumP
+              
+    &lt;NUM&gt;
+  
+              
+    &lt;ela&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               
+               <h3>adp nominal, nominal und nominal: drop case move case to last N of NP</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>comma</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>cnjcoo</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $4
+        )
+  
+        number-mangler(
+          
+    $6
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>tl[3]['whole']</em>
+            
+              <em>tl[4]['lem']</em>
+              <em>tl[4]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>tl[5]['whole']</em>
+            
+              <em>tl[6]['lem']</em>
+              <em>tl[6]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp nominal nominal nominal: drop case move case to last N of NP</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        number-mangler(
+          
+    $4
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              
+    &lt;nom&gt;
+  
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_nominal']</em>
+              <em>number</em>
+              
+    &lt;nom&gt;
+  
+            
+              <em>tl[4]['lem']</em>
+              <em>tl[4]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp det nouns nouns: drop case, det, move case to last N of       compound(?) NP</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>det</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $3
+        )
+  
+        case-mangler(
+          
+    $4
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_nominal']</em>
+              <em>tl[3]['a_number']</em>
+              
+    &lt;nom&gt;
+  
+            
+              <em>tl[4]['lem']</em>
+              <em>tl[4]['a_nominal']</em>
+              <em>tl[4]['a_number']</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp det adj nouns: drop case, det, move case</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>det</li>
+                  
+                  <li>adj</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $3
+        )
+  
+        case-mangler(
+          
+    $4
+        )
+  
+        comparison-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_adj']</em>
+              <em>comparison</em>
+              <em>tl[4]['a_number']</em>
+              <em>adpcase</em>
+            
+              <em>tl[4]['lem']</em>
+              <em>tl[4]['a_nominal']</em>
+              <em>tl[4]['a_number']</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp cmp nominal: drop case move case to last N of NP</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>cmp</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              
+    &lt;gen&gt;
+  
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp nominal nominal: drop case move case to last N of NP</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              
+    &lt;nom&gt;
+  
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp det nouns: drop case, det, move case</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>det</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $3
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>adpmaybe</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>als adj noun: is essive</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>als</li>
+                  
+                  <li>adj</li>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        comparison-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $3
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_adj']</em>
+              <em>comparison</em>
+              <em>number</em>
+              
+    &lt;ess&gt;
+  
+            
+              <em>tl[3]['lem']</em> 
+              <em>tl[3]['a_noun']</em> 
+              <em>number</em> 
+              
+    &lt;ess&gt;
+  
+            ]<sub>NP
+              
+    &lt;NP&gt;
+  
+              
+    &lt;ESS&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>dets adjs nouns: share case and pl</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>det</li>
+                  
+                  <li>adj</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $3
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        comparison-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_adj']</em>
+              <em>comparison</em>
+              <em>number</em>
+              <em>case</em>
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_noun']</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>NP
+              
+    &lt;NP&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>pps nouns: share case and pl</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>participle</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_verb']</em>
+              
+    "+tu"
+  
+              
+    &lt;adj.pos&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_noun']</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>NP
+              
+    &lt;NP&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adjs comp nouns: share case and pl</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adj</li>
+                  
+                  <li>cmp</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        compstuff-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $3
+        )
+  
+        number-mangler(
+          
+    $3
+        )
+  
+        comparison-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_adj']</em>
+              <em>comparison</em>
+              <em>number</em>
+              <em>case</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>compstuff</em>
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_noun']</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>NP
+              
+    &lt;NP&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adjs nouns: share case and pl</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adj</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        comparison-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_adj']</em>
+              <em>comparison</em>
+              <em>number</em>
+              <em>case</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_noun']</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>NP
+              
+    &lt;NP&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            </sub>
+        
+      </code></pre>
+               
+               
+               <h3>nouns haver: adessive structurise!</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>nominal</li>
+                  
+                  <li>haver</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        pers-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_nominal']</em>
+              <em>tl[1]['a_number']</em>
+              
+    &lt;ade&gt;
+  
+          
+            <em>tl[2]['lem']</em> 
+            <em>tl[2]['a_verb']</em> 
+            
+    &lt;actv&gt;
+   
+            <em>tense</em> 
+            
+    &lt;p3.sg&gt;
+   
+          ]<sub>NP
+              
+    &lt;N&gt;
+  
+              
+    &lt;ADE&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               <h3>perfect verbs: re-order, and re-perfect</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>perfection</li>
+                  
+                  <li>haver</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        pers-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              
+    "olla"
+       
+              
+    &lt;vaux&gt;
+   
+              
+    &lt;actv&gt;
+   
+              <em>tense</em> 
+              <em>pers</em> 
+            
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_verb']</em> 
+              
+    &lt;actv&gt;
+   
+              <em>tl[1]['a_perf']</em> 
+              
+    &lt;pos.nom&gt;
+   
+              <em>number</em>   
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;PERF&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               <h3>als noun: is essive</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>als</li>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em> 
+              <em>tl[2]['a_noun']</em> 
+              <em>number</em> 
+              
+    &lt;ess&gt;
+  
+            ]<sub>NP
+              
+    &lt;N&gt;
+  
+              
+    &lt;ESS&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>pp werden: passive construction, kill aux and passivise</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>perfection</li>
+                  
+                  <li>werden</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        infinite-mangler(
+          
+    $1
+        )
+  
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_verb']</em> 
+              
+    &lt;pasv&gt;
+   
+              <em>tense</em> 
+              
+    &lt;impers&gt;
+  
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;AUX&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>aux verbs: re-order, and distribute, persons</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>infinite</li>
+                  
+                  <li>auxiliary</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        infinite-mangler(
+          
+    $1
+        )
+  
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        pers-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>     
+              <em>tl[2]['a_verb']</em> 
+              
+    &lt;actv&gt;
+   
+              <em>tense</em> 
+              <em>pers</em> 
+            
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_verb']</em>
+              
+    &lt;actv&gt;
+   
+              <em>tl[1]['a_inf']</em>
+              <em>tl[1]['a_number']</em> 
+              <em>case</em>
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;AUX&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               <h3>verb neg pcp: ei oltu tehty</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>verb</li>
+                  
+                  <li>verbnegation</li>
+                  
+                  <li>participle</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        tensemood-mangler(
+          
+    $1
+        )
+  
+        voice-mangler(
+          
+    $1
+        )
+  
+        pers-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              
+    "ei"
+  
+              
+    &lt;vblex.neg.actv&gt;
+  
+              <em>pers</em>
+            
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_verb']</em>
+              
+    &lt;pasv&gt;
+  
+              <em>tense</em>
+              
+    &lt;impers.conneg&gt;
+  
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_verb']</em>
+              
+    "+tu"
+  
+              
+    &lt;adj.pos&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;NEG&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>verb negs: to neg conneg</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>verb</li>
+                  
+                  <li>verbnegation</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        tensemood-mangler(
+          
+    $1
+        )
+  
+        pers-mangler(
+          
+    $1
+        )
+  
+        conneg-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              
+    "ei"
+  
+              
+    &lt;vblex.neg.actv&gt;
+  
+              <em>pers</em>
+            
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_verb']</em>
+              
+    &lt;actv&gt;
+  
+              <em>tense</em>
+              <em>number</em>
+              
+    &lt;conneg&gt;
+  
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;NEG&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>neg verbs: to neg conneg</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>verbnegation</li>
+                  
+                  <li>verb</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        tensemood-mangler(
+          
+    $2
+        )
+  
+        pers-mangler(
+          
+    $2
+        )
+  
+        conneg-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              
+    "ei"
+  
+              
+    &lt;vblex.neg.actv&gt;
+  
+              <em>pers</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_verb']</em>
+              
+    &lt;actv&gt;
+  
+              <em>tense</em>
+              <em>number</em>
+              
+    &lt;conneg&gt;
+  
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;NEG&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>dets compnouns: case mangle</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>det</li>
+                  
+                  <li>cmp</li>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $3
+        )
+  
+        compstuff-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>compstuff</em>
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_noun']</em>
+              <em>tl[1]['a_number']</em>
+              <em>case</em>
+            ]<sub>NP
+              
+    &lt;N&gt;
+  
+          </sub>
+        
+      </code></pre>
+               
+               <h3>prndem propn: deu fail~prndem is actually det</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>prndem</li>
+                  
+                  <li>np</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_noun']</em>
+              <em>number</em>
+              <em>tl[1]['a_case']</em>
+            ]<sub>NP
+              
+    &lt;N&gt;
+  
+              <em>number</em>
+              <em>case</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>dets nouns: case mangle</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>det</li>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_noun']</em>
+              <em>number</em>
+              <em>tl[1]['a_case']</em>
+            ]<sub>NP
+              
+    &lt;N&gt;
+  
+              <em>number</em>
+              <em>case</em>
+          </sub>
+        
+      </code></pre>
+               
+               <h3>prn pers: case mangle and drop mfs</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>prnpers</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_prn']</em>
+              <em>tl[1]['a_number']</em>
+              <em>tl[1]['a_case']</em>
+            ]<sub>PRNP
+              
+    &lt;PRN&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp nominal und nominal: drop case distribute case</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>nominal</li>
+                  
+                  <li>cnjcoo</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>adpmaybe</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            
+              <em>tl[3]['whole']</em>
+            
+              <em>tl[4]['lem']</em>
+              <em>tl[4]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp nominal: drop case move case</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>adpmaybe</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              <em>adpcase</em>
+            ]<sub>NP
+                
+    &lt;NP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>possess nominals: possessive suffix</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>poss</li>
+                  
+                  <li>nominal</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        possessive-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $2
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>prnmaybe</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>number</em>
+              <em>case</em>
+              <em>possess</em>
+            ]<sub>NP
+              
+    &lt;N&gt;
+  
+              
+    &lt;POSS&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>numeral multiplier plural: partitive or stuff</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>cardinal</li>
+                  
+                  <li>multiplier</li>
+                  
+                  <li>plural</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        numtype-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_num']</em>
+              
+    &lt;card.sg.nom&gt;
+  
+            
+              <em>tl[2]['lem']</em>
+              
+    &lt;num.card.sg.par&gt;
+  
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_noun']</em>
+              
+    &lt;sg.par&gt;
+   
+            ]<sub>MeasureP
+                
+    &lt;CountXP&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>numeral plural: partitive or stuff</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>cardinal</li>
+                  
+                  <li>plural</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        numtype-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_num']</em>
+              <em>numtype</em>
+              
+    &lt;sg.nom&gt;
+  
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_noun']</em>
+              
+    &lt;sg.par&gt;
+   
+            ]<sub>MeasureP
+                
+    &lt;CountP&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adp numeral: add case and number</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+                  <li>num</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        adp-mangler(
+          
+    $1
+        )
+  
+        numtype-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>adpmaybe</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_num']</em>
+              <em>numtype</em>
+              
+    &lt;sg&gt;
+  
+              <em>adpcase</em>
+            ]<sub>NumP
+                
+    &lt;NumP&gt;
+  
+                <em>adpcase</em>
+            </sub>
+        
+      </code></pre>
+               
+               
+               
+               <h3>noun compounds: recompound</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>cmp</li>
+                  
+                  <li>cmp</li>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $3
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_nominal']</em>
+              <em>tl[1]['a_number']</em>
+              
+    &lt;gen&gt;
+  
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_nominal']</em>
+              <em>tl[2]['a_number']</em>
+              
+    &lt;gen&gt;
+  
+            
+              <em>tl[3]['lem']</em>
+              <em>tl[3]['a_noun']</em>
+              <em>tl[3]['a_number']</em>
+              <em>case</em>
+            ]<sub>N
+              
+    &lt;N.CMP&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>noun compounds: recompound</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>cmp</li>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        compstuff-mangler(
+          
+    $1
+        )
+  
+        case-mangler(
+          
+    $2
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_nominal']</em>
+              <em>compstuff</em>
+            
+              <em>tl[2]['lem']</em>
+              <em>tl[2]['a_noun']</em>
+              <em>tl[2]['a_number']</em>
+              <em>case</em>
+            ]<sub>N
+              
+    &lt;N.CMP&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>nouns: case mangle</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>noun</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_noun']</em>
+              <em>tl[1]['a_number']</em>
+              <em>case</em>
+            ]<sub>NP
+              
+    &lt;N.FOOFOO&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adjs: add case</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adj</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        comparison-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_adj']</em>
+              <em>comparison</em>
+              
+              <em>number</em>
+              
+    &lt;nom&gt;
+  
+            ]<sub>AP
+              
+    &lt;A&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>prns: case mangle, determine number</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>prn</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_prn']</em>
+              <em>number</em>
+              <em>case</em>
+            ]<sub>PrnP
+              
+    &lt;PRN&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>nums: add case, drop pl to sg</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>num</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        numtype-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_num']</em>
+              <em>numtype</em>
+              
+    &lt;sg.nom&gt;
+   
+            ]<sub>NumP
+              
+    &lt;Num&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>adps: drop case</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>adp</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_adp']</em>
+            ]<sub>AdpP
+                
+    &lt;Adp&gt;
+  
+                <em>sl[1]['a_case']</em>
+            </sub>
+        
+      </code></pre>
+               
+               <h3>stray negs: just say no</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>verbnegation</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              
+    "ei"
+  
+              
+    &lt;vblex.neg.actv.p3.sg&gt;
+  
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;NEG&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>stray possessives: ugly genitives</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>poss</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_prn']</em>
+              <em>tl[1]['a_number']</em>
+              
+    &lt;gen&gt;
+  
+            ]<sub>PossP
+              
+    &lt;Poss&gt;
+  
+          </sub>
+        
+      </code></pre>
+               
+               <h3>stranded articles: don't want</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>art</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    []<sub>ArtP
+              
+    &lt;ART&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>stranded dets: just show them</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>det</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        case-mangler(
+          
+    $1
+        )
+  
+        number-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_det']</em>
+              <em>tl[1]['a_number']</em>
+              <em>tl[1]['a_case']</em>
+            ]<sub>DetP
+              
+    &lt;Det&gt;
+  
+          </sub>
+        
+      </code></pre>
+               
+               <h3>lost perfect verbs: maybe predicative adj</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>perfection</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        tensemood-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_verb']</em> 
+              
+    &lt;pasv&gt;
+   
+              <em>tl[1]['a_perf']</em> 
+              
+    &lt;pos.nom.sg&gt;
+   
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;PERF&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               <h3>lonely infinitive: map infs and gers</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>infinite</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        infinite-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em> 
+              <em>tl[1]['a_verb']</em>
+              
+    &lt;actv&gt;
+   
+              <em>tl[1]['a_inf']</em>
+              <em>tl[1]['a_number']</em> 
+              <em>case</em>
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+              
+    &lt;INF&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>verbs: add activ passif, change past tags</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>verb</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        tensemood-mangler(
+          
+    $1
+        )
+  
+        pers-mangler(
+          
+    $1
+        )
+  
+        
+    Output: 
+          
+    [
+              <em>tl[1]['lem']</em>
+              <em>tl[1]['a_verb']</em>
+              
+    &lt;actv&gt;
+  
+              <em>tense</em> 
+              <em>pers</em> 
+            ]<sub>VP
+              
+    &lt;V&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               <h3>REGLA: SENT</h3>
+               
+               <div>Matching pattern:</div>
+               <ul>
+                  
+                  <li>sent</li>
+                  
+               </ul>
+               
+               <div>Action:</div><pre><code>
+        
+    Output: 
+          
+    [
+              <em>tl[1]['whole']</em>
+            ]<sub>sent
+              
+    &lt;SENT&gt;
+  
+            </sub>
+        
+      </code></pre>
+               
+               
+               
+               </div>
+         </div>
+         <div class="row">
+            <div id="footer" class="col-sm-12">
+               Documentation for
+               <a href="https://github.com/flammie/apertium-fin-deu">
+                  apertium-fin-deu
+                  </a></div>
+         </div>
+      </div>
+   </body>
+</html>
