@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" version="5.0"/>
+  <xsl:strip-space elements="let var clip
+    lit lit-tag
+    call-macro with-param
+    output
+    choose when otherwise
+    test equal
+    chunk tags tag
+    concat
+    lu b"/>
 
   <xsl:param name="from"/>
   <xsl:param name="to"/>
@@ -148,30 +157,34 @@
     </code></pre>
   </xsl:template>
 
-  <xsl:template match="let">
-    let <xsl:apply-templates select="var"/> := <xsl:apply-templates
-      select="lit|lit-tag"/>
+  <xsl:template match="let"
+    >let <xsl:apply-templates select="*[1]"/> ≔ <xsl:apply-templates
+      select="*[2]"/>;
   </xsl:template>
 
-  <xsl:template match="var">
-    <em><xsl:value-of select="@n"/></em>
-    <xsl:apply-templates/>
+  <xsl:template match="var"
+    >$<em><xsl:value-of select="@n"/></em><xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="lit">
-    "<xsl:value-of select="@v"/>"
-  </xsl:template>
+  <xsl:template match="concat"
+    ><xsl:apply-templates/></xsl:template>
 
-  <xsl:template match="lit-tag">
-    &lt;<xsl:value-of select="@v"/>&gt;
-  </xsl:template>
+  <xsl:template match="lit"
+    >"<xsl:value-of select="@v"/>"</xsl:template>
+
+  <xsl:template match="lit-tag"
+    >&lt;<xsl:value-of select="@v"/>&gt;</xsl:template>
 
   <xsl:template match="choose">
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="when">
+  <xsl:template match="when[1]">
     if <xsl:apply-templates select="test"/> then:
+       <xsl:apply-templates select="let"/>
+  </xsl:template>
+  <xsl:template match="when[position()>1]">
+    elseif <xsl:apply-templates select="test"/> then:
        <xsl:apply-templates select="let"/>
   </xsl:template>
 
@@ -180,17 +193,16 @@
        <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="test">
-    (<xsl:apply-templates/>)
-  </xsl:template>
+  <xsl:template match="test"
+    >(<xsl:apply-templates/>)</xsl:template>
 
   <xsl:template match="equal">
-    <xsl:apply-templates select="clip|var"/> =? <xsl:apply-templates 
+    <xsl:apply-templates select="clip|var"/> ≟ <xsl:apply-templates 
       select="lit|lit-tag"/>
   </xsl:template>
 
-  <xsl:template match="clip">
-    <em><xsl:value-of select="@side"/>[<xsl:value-of
+  <xsl:template match="clip"
+    ><em><xsl:value-of select="@side"/>[<xsl:value-of
         select="@pos"/>]['<xsl:value-of select="@part"/>']</em>
   </xsl:template>
 
@@ -227,8 +239,8 @@
     <xsl:value-of select="@n"/>(<xsl:apply-templates/>)
   </xsl:template>
 
-  <xsl:template match="with-param">
-    $<xsl:value-of select="@pos"/>
+  <xsl:template match="with-param"
+    >$<xsl:value-of select="@pos"/>
   </xsl:template>
 
   <xsl:template match="out">
@@ -236,24 +248,24 @@
   </xsl:template>
 
   <xsl:template match="chunk">
-    [<xsl:apply-templates select="lu"/>]<sub><xsl:value-of 
+    [<xsl:apply-templates select="b|lu"/>]<sub><xsl:value-of 
         select="@name"/><xsl:apply-templates select="tags"/></sub>
   </xsl:template>
 
-  <xsl:template name="tags">
+  <xsl:template match="tags"
+    ><xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="tag"
+    >&lt;<xsl:apply-templates/>&gt;
+  </xsl:template>
+
+  <xsl:template match="lu">
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template name="tag">
-    &lt;<xsl:apply-templates/>&gt;
-  </xsl:template>
-
-  <xsl:template name="lu">
-    <xsl:apply-templates/>
-  </xsl:template>
-
-  <xsl:template name="b">
-    &#160;
+  <xsl:template match="b">
+    <sub>b<xsl:value-of select="@pos"/></sub><br/>
   </xsl:template>
 
 </xsl:stylesheet>

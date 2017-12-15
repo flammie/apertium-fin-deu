@@ -1263,1030 +1263,326 @@
                
                <h3>test</h3>
                <div>Parametres: 1</div><pre><code>
-      
-    let <em>number</em> := 
-    ""
+      let $<em>number</em> ≔ "";
   
     </code></pre>
                <h3>comparison-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>tl[1]['a_adj']</em> =? 
-    &lt;num.ord&gt;
+    if (<em>tl[1]['a_adj']</em> ≟ &lt;num.ord&gt;) then:
+       let $<em>comparison</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>comparison</em> := 
-    ""
+    elseif (<em>sl[1]['a_comp']</em> ≟ &lt;comp&gt;) then:
+       let $<em>comparison</em> ≔ &lt;com&gt;;
   
-        
-    if 
-    (
-            <em>sl[1]['a_comp']</em> =? 
-    &lt;comp&gt;
+    elseif (<em>sl[1]['a_comp']</em> ≟ &lt;sup&gt;) then:
+       let $<em>comparison</em> ≔ &lt;sup&gt;;
   
-          )
-   then:
-       
-    let <em>comparison</em> := 
-    &lt;com&gt;
-  
-        
-    if 
-    (
-            <em>sl[1]['a_comp']</em> =? 
-    &lt;sup&gt;
-  
-          )
-   then:
-       
-    let <em>comparison</em> := 
-    &lt;sup&gt;
-  
-        
     else:
-       
-          
-    let <em>comparison</em> := 
-    &lt;pos&gt;
+       let $<em>comparison</em> ≔ &lt;pos&gt;;
   
-        
-      
     </code></pre>
                <h3>voice-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>tl[1]['a_voice']</em> =? 
-    &lt;actv&gt;
+    if (<em>tl[1]['a_voice']</em> ≟ &lt;actv&gt;) then:
+       let $<em>voice</em> ≔ &lt;actv&gt;;
   
-          )
-   then:
-       
-    let <em>voice</em> := 
-    &lt;actv&gt;
+    elseif (<em>tl[1]['a_voice']</em> ≟ &lt;pasv&gt;) then:
+       let $<em>voice</em> ≔ &lt;pasv&gt;;
   
-        
-    if 
-    (
-            <em>tl[1]['a_voice']</em> =? 
-    &lt;pasv&gt;
-  
-          )
-   then:
-       
-    let <em>voice</em> := 
-    &lt;pasv&gt;
-  
-        
     else:
-       
-          
-    let <em>voice</em> := 
-    &lt;actv&gt;
+       let $<em>voice</em> ≔ &lt;actv&gt;;
   
-        
-      
     </code></pre>
                <h3>number-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-        
-    if 
-    (
-            
-              <em>tl[1]['a_number']</em> =? 
-    &lt;sp&gt;
+    if (
+              <em>tl[1]['a_number']</em> ≟ &lt;sp&gt;
+              <em>tl[1]['a_case']</em> ≟ &lt;nom&gt;
+              <em>tl[1]['lem']</em> ≟ "kaikki"
+            ) then:
+       let $<em>number</em> ≔ &lt;sp&gt;;
   
-              <em>tl[1]['a_case']</em> =? 
-    &lt;nom&gt;
+    elseif (
+              <em>tl[1]['a_number']</em> ≟ &lt;sp&gt;
+              <em>tl[1]['a_case']</em> ≟ &lt;gen&gt;
+              <em>tl[1]['lem']</em> ≟ "mikä"
+            ) then:
+       let $<em>number</em> ≔ &lt;sp&gt;;
   
-              <em>tl[1]['lem']</em> =? 
-    "kaikki"
+    elseif (<em>tl[1]['lem']</em> ≟ "koko") then:
+       let $<em>number</em> ≔ "";
   
-            
-          )
-   then:
-       
-    let <em>number</em> := 
-    &lt;sp&gt;
+    elseif (
+              $<em>tense</em> ≟ &lt;pri&gt;
+              <em>tl[1]['a_conneg']</em> ≟ &lt;conneg&gt;
+            ) then:
+       let $<em>number</em> ≔ "";
   
-        
-    if 
-    (
-            
-              <em>tl[1]['a_number']</em> =? 
-    &lt;sp&gt;
+    elseif (<em>tl[1]['a_nominal']</em> ≟ &lt;n.compound-only-L&gt;) then:
+       let $<em>number</em> ≔ "";
   
-              <em>tl[1]['a_case']</em> =? 
-    &lt;gen&gt;
+    elseif (<em>tl[1]['a_number']</em> ≟ &lt;sg&gt;) then:
+       let $<em>number</em> ≔ &lt;sg&gt;;
   
-              <em>tl[1]['lem']</em> =? 
-    "mikä"
+    elseif (<em>tl[1]['a_number']</em> ≟ &lt;pl&gt;) then:
+       let $<em>number</em> ≔ &lt;pl&gt;;
   
-            
-          )
-   then:
-       
-    let <em>number</em> := 
-    &lt;sp&gt;
-  
-        
-    if 
-    (
-            <em>tl[1]['lem']</em> =? 
-    "koko"
-  
-          )
-   then:
-       
-    let <em>number</em> := 
-    ""
-  
-        
-    if 
-    (
-            
-              <em>tense</em> =? 
-    &lt;pri&gt;
-  
-              <em>tl[1]['a_conneg']</em> =? 
-    &lt;conneg&gt;
-  
-            
-          )
-   then:
-       
-    let <em>number</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>tl[1]['a_nominal']</em> =? 
-    &lt;n.compound-only-L&gt;
-  
-          )
-   then:
-       
-    let <em>number</em> := 
-    ""
-  
-        
-        
-    if 
-    (
-            <em>tl[1]['a_number']</em> =? 
-    &lt;sg&gt;
-  
-          )
-   then:
-       
-    let <em>number</em> := 
-    &lt;sg&gt;
-  
-        
-    if 
-    (
-            <em>tl[1]['a_number']</em> =? 
-    &lt;pl&gt;
-  
-          )
-   then:
-       
-    let <em>number</em> := 
-    &lt;pl&gt;
-  
-        
     else:
-       
-          
-    let <em>number</em> := 
-    &lt;sg&gt;
+       let $<em>number</em> ≔ &lt;sg&gt;;
   
-        
-      
     </code></pre>
                <h3>numtype-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>sl[1]['a_numtype']</em> =? 
-    &lt;card&gt;
+    if (<em>sl[1]['a_numtype']</em> ≟ &lt;card&gt;) then:
+       let $<em>numtype</em> ≔ &lt;card&gt;;
   
-          )
-   then:
-       
-    let <em>numtype</em> := 
-    &lt;card&gt;
+    elseif (<em>sl[1]['a_numtype']</em> ≟ &lt;ord&gt;) then:
+       let $<em>numtype</em> ≔ &lt;ord&gt;;
   
-        
-    if 
-    (
-            <em>sl[1]['a_numtype']</em> =? 
-    &lt;ord&gt;
+    elseif (<em>tl[1]['a_numtype']</em> ≟ &lt;nocard&gt;) then:
+       let $<em>numtype</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>numtype</em> := 
-    &lt;ord&gt;
-  
-        
-    if 
-    (
-            <em>tl[1]['a_numtype']</em> =? 
-    &lt;nocard&gt;
-  
-          )
-   then:
-       
-    let <em>numtype</em> := 
-    ""
-  
-        
     else:
-       
-          
-    let <em>numtype</em> := 
-    &lt;card&gt;
+       let $<em>numtype</em> ≔ &lt;card&gt;;
   
-        
-      
     </code></pre>
                <h3>tensemood-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>tl[1]['lem']</em> =? 
-    "ei"
+    if (<em>tl[1]['lem']</em> ≟ "ei") then:
+       let $<em>tense</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>tense</em> := 
-    ""
+    elseif (<em>sl[1]['a_tense']</em> ≟ &lt;pii&gt;) then:
+       let $<em>tense</em> ≔ &lt;past&gt;;
   
-        
-    if 
-    (
-              <em>sl[1]['a_tense']</em> =? 
-    &lt;pii&gt;
+    elseif (<em>sl[1]['a_tense']</em> ≟ &lt;prs&gt;) then:
+       let $<em>tense</em> ≔ &lt;pri&gt;;
   
-          )
-   then:
-       
-    let <em>tense</em> := 
-    &lt;past&gt;
+    elseif (<em>sl[1]['a_tense']</em> ≟ &lt;pis&gt;) then:
+       let $<em>tense</em> ≔ &lt;pri&gt;;
   
-        
-    if 
-    (
-              <em>sl[1]['a_tense']</em> =? 
-    &lt;prs&gt;
+    elseif (<em>sl[1]['a_tense']</em> ≟ &lt;past&gt;) then:
+       let $<em>tense</em> ≔ &lt;past&gt;;
   
-          )
-   then:
-       
-    let <em>tense</em> := 
-    &lt;pri&gt;
-  
-        
-    if 
-    (
-              <em>sl[1]['a_tense']</em> =? 
-    &lt;pis&gt;
-  
-          )
-   then:
-       
-    let <em>tense</em> := 
-    &lt;pri&gt;
-  
-        
-    if 
-    (
-              <em>sl[1]['a_tense']</em> =? 
-    &lt;past&gt;
-  
-          )
-   then:
-       
-    let <em>tense</em> := 
-    &lt;past&gt;
-  
-        
     else:
-       
-          
-    let <em>tense</em> := 
-    &lt;pri&gt;
+       let $<em>tense</em> ≔ &lt;pri&gt;;
   
-        
-      
     </code></pre>
                <h3>pers-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-              <em>sl[1]['a_pers']</em> =? 
-    &lt;p1.sg&gt;
+    if (<em>sl[1]['a_pers']</em> ≟ &lt;p1.sg&gt;) then:
+       let $<em>pers</em> ≔ &lt;p1.sg&gt;;
   
-          )
-   then:
-       
-    let <em>pers</em> := 
-    &lt;p1.sg&gt;
+    elseif (<em>sl[1]['a_pers']</em> ≟ &lt;p2.sg&gt;) then:
+       let $<em>pers</em> ≔ &lt;p2.sg&gt;;
   
-        
-    if 
-    (
-              <em>sl[1]['a_pers']</em> =? 
-    &lt;p2.sg&gt;
+    elseif (<em>sl[1]['a_pers']</em> ≟ &lt;p3.sg&gt;) then:
+       let $<em>pers</em> ≔ &lt;p3.sg&gt;;
   
-          )
-   then:
-       
-    let <em>pers</em> := 
-    &lt;p2.sg&gt;
+    elseif (<em>sl[1]['a_pers']</em> ≟ &lt;p1.pl&gt;) then:
+       let $<em>pers</em> ≔ &lt;p1.pl&gt;;
   
-        
-    if 
-    (
-              <em>sl[1]['a_pers']</em> =? 
-    &lt;p3.sg&gt;
+    elseif (<em>sl[1]['a_pers']</em> ≟ &lt;p2.pl&gt;) then:
+       let $<em>pers</em> ≔ &lt;p2.pl&gt;;
   
-          )
-   then:
-       
-    let <em>pers</em> := 
-    &lt;p3.sg&gt;
+    elseif (<em>sl[1]['a_pers']</em> ≟ &lt;p3.pl&gt;) then:
+       let $<em>pers</em> ≔ &lt;p3.pl&gt;;
   
-        
-    if 
-    (
-              <em>sl[1]['a_pers']</em> =? 
-    &lt;p1.pl&gt;
-  
-          )
-   then:
-       
-    let <em>pers</em> := 
-    &lt;p1.pl&gt;
-  
-        
-    if 
-    (
-              <em>sl[1]['a_pers']</em> =? 
-    &lt;p2.pl&gt;
-  
-          )
-   then:
-       
-    let <em>pers</em> := 
-    &lt;p2.pl&gt;
-  
-        
-    if 
-    (
-              <em>sl[1]['a_pers']</em> =? 
-    &lt;p3.pl&gt;
-  
-          )
-   then:
-       
-    let <em>pers</em> := 
-    &lt;p3.pl&gt;
-  
-        
     else:
-       
-          
-    let <em>pers</em> := 
-    &lt;p3.sg&gt;
+       let $<em>pers</em> ≔ &lt;p3.sg&gt;;
   
-        
-      
     </code></pre>
                <h3>case-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>tl[1]['lem']</em> =? 
-    "koko"
+    if (<em>tl[1]['lem']</em> ≟ "koko") then:
+       let $<em>case</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>case</em> := 
-    ""
+    elseif (<em>tl[1]['a_nominal']</em> ≟ &lt;n.compound-only-L&gt;) then:
+       let $<em>case</em> ≔ "";
   
-        
-    if 
-    (
-            <em>tl[1]['a_nominal']</em> =? 
-    &lt;n.compound-only-L&gt;
+    elseif (<em>sl[1]['a_case']</em> ≟ &lt;acc&gt;) then:
+       let <em>tl[1]['a_case']</em> ≔ &lt;gen&gt;;
+  let $<em>case</em> ≔ &lt;gen&gt;;
   
-          )
-   then:
-       
-    let <em>case</em> := 
-    ""
+    elseif (<em>sl[1]['a_case']</em> ≟ &lt;dat&gt;) then:
+       let <em>tl[1]['a_case']</em> ≔ &lt;gen&gt;;
+  let $<em>case</em> ≔ &lt;gen&gt;;
   
-        
-        
-    if 
-    (
-            <em>sl[1]['a_case']</em> =? 
-    &lt;acc&gt;
+    elseif (<em>sl[1]['a_case']</em> ≟ &lt;cmp&gt;) then:
+       let <em>tl[1]['a_case']</em> ≔ &lt;nom&gt;;
+  let $<em>case</em> ≔ &lt;nom&gt;;
   
-          )
-   then:
-       
-    let  := 
-    &lt;gen&gt;
+    elseif (<em>sl[1]['a_case']</em> ≟ &lt;gen&gt;) then:
+       let <em>tl[1]['a_case']</em> ≔ &lt;gen&gt;;
+  let $<em>case</em> ≔ &lt;gen&gt;;
   
-    let <em>case</em> := 
-    &lt;gen&gt;
+    elseif (<em>sl[1]['a_case']</em> ≟ "") then:
+       let <em>tl[1]['a_case']</em> ≔ &lt;nom&gt;;
+  let $<em>case</em> ≔ &lt;nom&gt;;
   
-        
-    if 
-    (
-            <em>sl[1]['a_case']</em> =? 
-    &lt;dat&gt;
-  
-          )
-   then:
-       
-    let  := 
-    &lt;gen&gt;
-  
-    let <em>case</em> := 
-    &lt;gen&gt;
-  
-        
-    if 
-    (
-            <em>sl[1]['a_case']</em> =? 
-    &lt;cmp&gt;
-  
-          )
-   then:
-       
-    let  := 
-    &lt;nom&gt;
-  
-    let <em>case</em> := 
-    &lt;nom&gt;
-  
-        
-    if 
-    (
-            <em>sl[1]['a_case']</em> =? 
-    &lt;gen&gt;
-  
-          )
-   then:
-       
-    let  := 
-    &lt;gen&gt;
-  
-    let <em>case</em> := 
-    &lt;gen&gt;
-  
-        
-    if 
-    (
-            <em>sl[1]['a_case']</em> =? 
-    ""
-  
-          )
-   then:
-       
-    let  := 
-    &lt;nom&gt;
-  
-    let <em>case</em> := 
-    &lt;nom&gt;
-  
-        
-        
     else:
-       
-          
-    let  := 
-    &lt;nom&gt;
+       let <em>tl[1]['a_case']</em> ≔ &lt;nom&gt;;
+  let $<em>case</em> ≔ &lt;nom&gt;;
   
-          
-    let <em>case</em> := 
-    &lt;nom&gt;
-  
-        
-      
     </code></pre>
                <h3>infinite-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-              <em>sl[1]['a_inf']</em> =? 
-    &lt;inf&gt;
+    if (<em>sl[1]['a_inf']</em> ≟ &lt;inf&gt;) then:
+       let <em>tl[1]['a_inf']</em> ≔ &lt;infa&gt;;
+  let $<em>case</em> ≔ &lt;lat&gt;;
   
-          )
-   then:
-       
-    let  := 
-    &lt;infa&gt;
+    elseif (<em>sl[1]['a_inf']</em> ≟ &lt;ger&gt;) then:
+       let <em>tl[1]['a_inf']</em> ≔ &lt;infma&gt;;
+  let $<em>case</em> ≔ &lt;ine&gt;;
   
-    let <em>case</em> := 
-    &lt;lat&gt;
-  
-        
-    if 
-    (
-              <em>sl[1]['a_inf']</em> =? 
-    &lt;ger&gt;
-  
-          )
-   then:
-       
-    let  := 
-    &lt;infma&gt;
-  
-    let <em>case</em> := 
-    &lt;ine&gt;
-  
-        
-      
     </code></pre>
                <h3>possessive-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "mein"
+    if (<em>sl[1]['lem']</em> ≟ "mein") then:
+       let $<em>prnmaybe</em> ≔ "";
+  let $<em>poss</em> ≔ &lt;pxsg1&gt;;
   
-          )
-   then:
-       
-    let <em>prnmaybe</em> := 
-    ""
+    elseif (<em>sl[1]['lem']</em> ≟ "dein") then:
+       let $<em>poss</em> ≔ &lt;pxsg2&gt;;
+  let $<em>prnmaybe</em> ≔ "";
   
-    let <em>poss</em> := 
-    &lt;pxsg1&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "eure") then:
+       let $<em>poss</em> ≔ &lt;pxsg2&gt;;
+  let $<em>prnmaybe</em> ≔ "";
   
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "dein"
+    elseif (<em>sl[1]['lem']</em> ≟ "unser") then:
+       let $<em>poss</em> ≔ &lt;pxsg1&gt;;
+  let $<em>prnmaybe</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>poss</em> := 
-    &lt;pxsg2&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "sein") then:
+       let $<em>poss</em> ≔ &lt;pxsp3&gt;;
+  let $<em>prnmaybe</em> ≔ "hän"&lt;prn.pers.sg.gen&gt;;
   
-    let <em>prnmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "eure"
-  
-          )
-   then:
-       
-    let <em>poss</em> := 
-    &lt;pxsg2&gt;
-  
-    let <em>prnmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "unser"
-  
-          )
-   then:
-       
-    let <em>poss</em> := 
-    &lt;pxsg1&gt;
-  
-    let <em>prnmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "sein"
-  
-          )
-   then:
-       
-    let <em>poss</em> := 
-    &lt;pxsp3&gt;
-  
-    let <em>prnmaybe</em> := 
-        
-        
     else:
-       
-          
-    let <em>poss</em> := 
-    &lt;pxsp3&gt;
+       let $<em>poss</em> ≔ &lt;pxsp3&gt;;
+  let $<em>prnmaybe</em> ≔ <em>tl[1]['whole']</em>;
   
-          
-    let <em>prnmaybe</em> := 
-        
-      
     </code></pre>
                <h3>adp-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            
-              <em>sl[1]['lem']</em> =? 
-    "in"
+    if (
+              <em>sl[1]['lem']</em> ≟ "in"
+              <em>sl[1]['a_case']</em> ≟ &lt;dat&gt;
+            ) then:
+       let $<em>adpmaybe</em> ≔ "";
+  let $<em>adpcase</em> ≔ &lt;ine&gt;;
   
-              <em>sl[1]['a_case']</em> =? 
-    &lt;dat&gt;
+    elseif (
+              <em>sl[1]['lem']</em> ≟ "ab"
+              <em>sl[1]['a_case']</em> ≟ &lt;dat&gt;
+            ) then:
+       let $<em>adpmaybe</em> ≔ "";
+  let $<em>adpcase</em> ≔ &lt;abl&gt;;
   
-            
-          )
-   then:
-       
-    let <em>adpmaybe</em> := 
-    ""
+    elseif (
+              <em>sl[1]['lem']</em> ≟ "in"
+              <em>sl[1]['a_case']</em> ≟ &lt;acc&gt;
+            ) then:
+       let $<em>adpmaybe</em> ≔ "";
+  let $<em>adpcase</em> ≔ &lt;ill&gt;;
   
-    let <em>adpcase</em> := 
-    &lt;ine&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "auf") then:
+       let $<em>adpcase</em> ≔ &lt;ine&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-        
-    if 
-    (
-            
-              <em>sl[1]['lem']</em> =? 
-    "ab"
+    elseif (<em>sl[1]['lem']</em> ≟ "um") then:
+       let $<em>adpcase</em> ≔ &lt;abl&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-              <em>sl[1]['a_case']</em> =? 
-    &lt;dat&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "aus") then:
+       let $<em>adpcase</em> ≔ &lt;ela&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-            
-          )
-   then:
-       
-    let <em>adpmaybe</em> := 
-    ""
+    elseif (<em>sl[1]['lem']</em> ≟ "über") then:
+       let $<em>adpcase</em> ≔ &lt;ela&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-    let <em>adpcase</em> := 
-    &lt;abl&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "bei") then:
+       let $<em>adpcase</em> ≔ &lt;ade&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-        
-    if 
-    (
-            
-              <em>sl[1]['lem']</em> =? 
-    "in"
+    elseif (<em>sl[1]['lem']</em> ≟ "von") then:
+       let $<em>adpcase</em> ≔ &lt;ela&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-              <em>sl[1]['a_case']</em> =? 
-    &lt;acc&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "bis") then:
+       let $<em>adpcase</em> ≔ &lt;ill&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-            
-          )
-   then:
-       
-    let <em>adpmaybe</em> := 
-    ""
+    elseif (<em>sl[1]['lem']</em> ≟ "als") then:
+       let $<em>adpcase</em> ≔ &lt;ess&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-    let <em>adpcase</em> := 
-    &lt;ill&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "mit") then:
+       let $<em>adpcase</em> ≔ &lt;ade&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "auf"
+    elseif (<em>sl[1]['lem']</em> ≟ "zu") then:
+       let $<em>adpcase</em> ≔ &lt;tra&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ine&gt;
+    elseif (<em>sl[1]['lem']</em> ≟ "an") then:
+       let $<em>adpcase</em> ≔ &lt;abl&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-    let <em>adpmaybe</em> := 
-    ""
+    elseif (<em>sl[1]['lem']</em> ≟ "nach") then:
+       let $<em>adpcase</em> ≔ &lt;ill&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "um"
+    elseif (<em>sl[1]['lem']</em> ≟ "ohne") then:
+       let $<em>adpcase</em> ≔ &lt;abe&gt;;
+  let $<em>adpmaybe</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;abl&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "aus"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ela&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "über"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ela&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "bei"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ade&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "von"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ela&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "bis"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ill&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "als"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ess&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "mit"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ade&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "zu"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;tra&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "an"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;abl&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "nach"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;ill&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-    if 
-    (
-            <em>sl[1]['lem']</em> =? 
-    "ohne"
-  
-          )
-   then:
-       
-    let <em>adpcase</em> := 
-    &lt;abe&gt;
-  
-    let <em>adpmaybe</em> := 
-    ""
-  
-        
-        
     else:
-       
-          
-    let <em>adpcase</em> := 
-    &lt;gen&gt;
+       let $<em>adpcase</em> ≔ &lt;gen&gt;;
+  let $<em>adpmaybe</em> ≔ <em>tl[1]['whole']</em>;
   
-          
-    let <em>adpmaybe</em> := 
-        
-      
     </code></pre>
                <h3>compstuff-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-        
-    if 
-    (
-            <em>tl[1]['a_nominal']</em> =? 
-    &lt;n.compound-only-L&gt;
+    if (<em>tl[1]['a_nominal']</em> ≟ &lt;n.compound-only-L&gt;) then:
+       let $<em>compstuff</em> ≔ &lt;cmp&gt;;
   
-          )
-   then:
-       
-    let <em>compstuff</em> := 
-    &lt;cmp&gt;
+    elseif (
+             <em>tl[1]['lem']</em> ≟ "yhteis"
+             <em>tl[1]['lem']</em> ≟ "lähi"
+           ) then:
+       let $<em>compstuff</em> ≔ &lt;compound-only-L&gt;;
   
-        
-    if 
-    (
-            
-             <em>tl[1]['lem']</em> =? 
-    "yhteis"
-  
-             <em>tl[1]['lem']</em> =? 
-    "lähi"
-  
-           
-          )
-   then:
-       
-    let <em>compstuff</em> := 
-    &lt;compound-only-L&gt;
-  
-        
-        
     else:
-       
-          
-    let <em>compstuff</em> := 
-    &lt;sg.gen&gt;
+       let $<em>compstuff</em> ≔ &lt;sg.gen&gt;;
   
-        
-      
     </code></pre>
                <h3>conneg-mangler</h3>
                <div>Parametres: 1</div><pre><code>
       
-        
-    if 
-    (
-            <em>sl[1]['a_tense']</em> =? 
-    &lt;prs&gt;
+    if (<em>sl[1]['a_tense']</em> ≟ &lt;prs&gt;) then:
+       let $<em>number</em> ≔ "";
   
-          )
-   then:
-       
-    let <em>number</em> := 
-    ""
+    elseif (<em>tl[1]['a_number']</em> ≟ &lt;sg&gt;) then:
+       let $<em>number</em> ≔ &lt;sg&gt;;
   
-        
-    if 
-    (
-            <em>tl[1]['a_number']</em> =? 
-    &lt;sg&gt;
+    elseif (<em>tl[1]['a_number']</em> ≟ &lt;pl&gt;) then:
+       let $<em>number</em> ≔ &lt;pl&gt;;
   
-          )
-   then:
-       
-    let <em>number</em> := 
-    &lt;sg&gt;
-  
-        
-    if 
-    (
-            <em>tl[1]['a_number']</em> =? 
-    &lt;pl&gt;
-  
-          )
-   then:
-       
-    let <em>number</em> := 
-    &lt;pl&gt;
-  
-        
     else:
-       
-          
-    let <em>number</em> := 
-    ""
+       let $<em>number</em> ≔ "";
   
-        
-      
     </code></pre>
                
                
@@ -2308,18 +1604,8 @@
         
     Output: 
           
-    [
-              
-    "ex"
-  
-              
-    &lt;n.sg.nom&gt;
-  
-            ]<sub>ex2NP
-              
-    &lt;NP.SG.NOM&gt;
-  
-            </sub>
+    ["ex"&lt;n.sg.nom&gt;]<sub>ex2NP&lt;&lt;NP.SG.NOM&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2336,18 +1622,8 @@
         
     Output: 
           
-    [
-              
-    "yhä"
-  
-              
-    &lt;adv&gt;
-  
-            ]<sub>nochein2NP
-              
-    &lt;ADV&gt;
-  
-            </sub>
+    ["yhä"&lt;adv&gt;]<sub>nochein2NP&lt;&lt;ADV&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2364,25 +1640,8 @@
         
     Output: 
           
-    [
-              
-    "yhtä"
-  
-              
-    &lt;adv&gt;
-  
-            
-              
-    "paljon"
-  
-              
-    &lt;adv&gt;
-  
-            ]<sub>soviele2NP
-              
-    &lt;NP.SG.NOM&gt;
-  
-            </sub>
+    ["yhtä"&lt;adv&gt;<sub>b1</sub><br>"paljon"&lt;adv&gt;]<sub>soviele2NP&lt;&lt;NP.SG.NOM&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2399,18 +1658,8 @@
         
     Output: 
           
-    [
-              
-    "somali"
-  
-              
-    &lt;n.pl.gen&gt;
-  
-            ]<sub>DESOMALIEREN2NP
-              
-    &lt;NP.PL.NOM&gt;
-  
-            </sub>
+    ["somali"&lt;n.pl.gen&gt;]<sub>DESOMALIEREN2NP&lt;&lt;NP.PL.NOM&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2427,18 +1676,8 @@
         
     Output: 
           
-    [
-              
-    "de"
-  
-              
-    &lt;np.cog.sg.nom&gt;
-  
-            ]<sub>DEADP2NP
-              
-    &lt;NP.SG.NOM&gt;
-  
-            </sub>
+    ["de"&lt;np.cog.sg.nom&gt;]<sub>DEADP2NP&lt;&lt;NP.SG.NOM&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2455,18 +1694,8 @@
         
     Output: 
           
-    [
-              
-    "St."
-  
-              
-    &lt;np.sg.nom&gt;
-  
-            ]<sub>DEST2NP
-              
-    &lt;NP.SG.NOM&gt;
-  
-            </sub>
+    ["St."&lt;np.sg.nom&gt;]<sub>DEST2NP&lt;&lt;NP.SG.NOM&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2487,66 +1716,19 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        comparison-mangler(
-          
-    $2
-        )
+        comparison-mangler($2)
   
-        comparison-mangler(
-          
-    $4
-        )
+        comparison-mangler($4)
   
-        case-mangler(
-          
-    $4
-        )
+        case-mangler($4)
   
         
     Output: 
           
-    [
-              
-    "ei"
-  
-              
-    &lt;vblex.neg.actv.p3.sg&gt;
-  
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_adj']</em>
-              <em>comparison</em>
-              <em>number</em>
-              <em>case</em>
-            
-              
-    "ei"
-  
-              
-    &lt;vblex.neg.actv.p3.sg&gt;
-  
-              
-    "+ka"
-  
-              
-    &lt;enc&gt;
-  
-            
-              <em>tl[4]['lem']</em>
-              <em>tl[4]['a_adj']</em>
-              <em>comparison</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>AP
-                
-    &lt;CC&gt;
-  
-            </sub>
+    ["ei"&lt;vblex.neg.actv.p3.sg&gt;<sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_adj']</em>$<em>comparison</em>$<em>number</em>$<em>case</em><sub>b2</sub><br>"ei"&lt;vblex.neg.actv.p3.sg&gt;"+ka"&lt;enc&gt;<sub>b3</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_adj']</em>$<em>comparison</em>$<em>number</em>$<em>case</em>]<sub>AP&lt;&lt;CC&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2564,31 +1746,15 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>    
-              <em>tl[2]['a_noun']</em> 
-              <em>number</em>                       
-              
-    &lt;ill&gt;
-                        
-            ]<sub>AdvP
-                
-    &lt;ADV&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em>&lt;ill&gt;]<sub>AdvP&lt;&lt;ADV&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2606,33 +1772,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>    
-              <em>tl[2]['a_noun']</em> 
-              <em>number</em>                       
-              
-    &lt;gen&gt;
-                        
-            
-              
-    "mittaan"
-  
-              
-    &lt;adv&gt;
-  
-            ]<sub>AdvP
-                
-    &lt;ADV&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em>&lt;gen&gt;<sub>b2</sub><br>"mittaan"&lt;adv&gt;]<sub>AdvP&lt;&lt;ADV&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2648,38 +1794,15 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>    
-              <em>tl[2]['a_noun']</em> 
-              <em>number</em>                       
-              
-    &lt;gen&gt;
-                        
-            
-              
-    "mukaan"
-  
-              
-    &lt;post&gt;
-  
-            ]<sub>AdvP
-                
-    &lt;ADV&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em>&lt;gen&gt;<sub>b1</sub><br>"mukaan"&lt;post&gt;]<sub>AdvP&lt;&lt;ADV&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2697,41 +1820,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        numtype-mangler(
-          
-    $2
-        )
+        numtype-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[3]['lem']</em> 
-              <em>tl[3]['a_nominal']</em>
-              
-    &lt;sg.nom&gt;
-  
-            
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>UhrP
-              
-    &lt;UHR&gt;
-  
-            </sub>
+    [<em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em>&lt;sg.nom&gt;<sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_num']</em>$<em>numtype</em>$<em>number</em>$<em>case</em>]<sub>UhrP&lt;&lt;UHR&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2754,18 +1853,8 @@
         
     Output: 
           
-    [
-              
-    "kuolla"
-  
-              
-    &lt;vblex.actv.pp.pos.nom.sg&gt;
-  
-            ]<sub>VP
-              
-    &lt;dead.becoming&gt;
-  
-            </sub>
+    ["kuolla"&lt;vblex.actv.pp.pos.nom.sg&gt;]<sub>VP&lt;&lt;dead.becoming&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2783,48 +1872,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        numtype-mangler(
-          
-    $2
-        )
+        numtype-mangler($2)
   
         
     Output: 
           
-    [
-              
-    "suunnilleen"
-  
-              
-    &lt;post&gt;
-  
-            
-              <em>tl[3]['lem']</em> 
-              <em>tl[3]['a_nominal']</em>
-              
-    &lt;sg.nom&gt;
-  
-            
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>UhrP
-              
-    &lt;UHR&gt;
-  
-            </sub>
+    ["suunnilleen"&lt;post&gt;<sub>b1</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em>&lt;sg.nom&gt;<sub>b2</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_num']</em>$<em>numtype</em>$<em>number</em>$<em>case</em>]<sub>UhrP&lt;&lt;UHR&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2844,43 +1902,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
-        numtype-mangler(
-          
-    $3
-        )
+        numtype-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[3]['lem']</em> 
-              <em>tl[3]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              
-    &lt;ess&gt;
-  
-            
-              <em>tl[4]['lem']</em> 
-              <em>tl[4]['a_nominal']</em>
-              
-    &lt;sg.par&gt;
-  
-            ]<sub>MonatP
-              
-    &lt;MONAT&gt;
-  
-            </sub>
+    [<em>tl[3]['lem']</em><em>tl[3]['a_num']</em>$<em>numtype</em>$<em>number</em>&lt;ess&gt;<sub>b1</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_nominal']</em>&lt;sg.par&gt;]<sub>MonatP&lt;&lt;MONAT&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2896,41 +1928,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
-        numtype-mangler(
-          
-    $1
-        )
+        numtype-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              <em>case</em>
-            
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_nominal']</em>
-              
-    &lt;sg.par&gt;
-  
-            ]<sub>MonatP
-              
-    &lt;MONAT&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_num']</em>$<em>numtype</em>$<em>number</em>$<em>case</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>&lt;sg.par&gt;]<sub>MonatP&lt;&lt;MONAT&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2946,41 +1954,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
-        numtype-mangler(
-          
-    $1
-        )
+        numtype-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_nominal']</em>
-              
-    &lt;sg.nom&gt;
-  
-            
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>UhrP
-              
-    &lt;UHR&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>&lt;sg.nom&gt;<sub>b1</sub><br><em>tl[1]['lem']</em><em>tl[1]['a_num']</em>$<em>numtype</em>$<em>number</em>$<em>case</em>]<sub>UhrP&lt;&lt;UHR&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -2998,42 +1982,16 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        infinite-mangler(
-          
-    $2
-        )
+        infinite-mangler($2)
   
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_adv']</em> 
-            
-              
-    "mennä"
-   
-              <em>tl[2]['a_verb']</em> 
-              
-    &lt;actv&gt;
-   
-              <em>tense</em> 
-              
-    &lt;p3.sg&gt;
-   
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;ADE&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_adv']</em><sub>b1</sub><br>"mennä"<em>tl[2]['a_verb']</em>&lt;actv&gt;$<em>tense</em>&lt;p3.sg&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;ADE&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -3051,56 +2009,20 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
-        infinite-mangler(
-          
-    $2
-        )
+        infinite-mangler($2)
   
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_nominal']</em> 
-              <em>number</em>
-              
-    &lt;ade&gt;
-  
-            
-              
-    "mennä"
-   
-              <em>tl[2]['a_verb']</em> 
-              
-    &lt;actv&gt;
-   
-              <em>tense</em> 
-              
-    &lt;p3.sg&gt;
-   
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;ADE&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_nominal']</em>$<em>number</em>&lt;ade&gt;<sub>b1</sub><br>"mennä"<em>tl[2]['a_verb']</em>&lt;actv&gt;$<em>tense</em>&lt;p3.sg&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;ADE&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -3116,47 +2038,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        numtype-mangler(
-          
-    $2
-        )
+        numtype-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              
-    &lt;ela&gt;
-  
-            
-              
-    "alkaen"
-  
-              
-    &lt;post&gt;
-  
-            ]<sub>NumP
-              
-    &lt;NUM&gt;
-  
-              
-    &lt;ela&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_num']</em>$<em>numtype</em>$<em>number</em>&lt;ela&gt;<sub>b1</sub><br>"alkaen"&lt;post&gt;]<sub>NumP&lt;&lt;NUM&gt;&gt;
+  &lt;&lt;ela&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -3172,47 +2065,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        numtype-mangler(
-          
-    $2
-        )
+        numtype-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_num']</em>
-              <em>numtype</em>
-              <em>number</em>
-              
-    &lt;ill&gt;
-  
-            
-              
-    "asti"
-  
-              
-    &lt;post&gt;
-  
-            ]<sub>NumP
-              
-    &lt;NUM&gt;
-  
-              
-    &lt;ela&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_num']</em>$<em>numtype</em>$<em>number</em>&lt;ill&gt;<sub>b1</sub><br>"asti"&lt;post&gt;]<sub>NumP&lt;&lt;NUM&gt;&gt;
+  &lt;&lt;ela&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -3238,56 +2102,20 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        number-mangler(
-          
-    $4
-        )
+        number-mangler($4)
   
-        number-mangler(
-          
-    $6
-        )
+        number-mangler($6)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>tl[3]['whole']</em>
-            
-              <em>tl[4]['lem']</em>
-              <em>tl[4]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>tl[5]['whole']</em>
-            
-              <em>tl[6]['lem']</em>
-              <em>tl[6]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b2</sub><br><em>tl[3]['whole']</em><sub>b3</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b4</sub><br><em>tl[5]['whole']</em><sub>b5</sub><br><em>tl[6]['lem']</em><em>tl[6]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3307,56 +2135,20 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
-        number-mangler(
-          
-    $4
-        )
+        number-mangler($4)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              
-    &lt;nom&gt;
-  
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_nominal']</em>
-              <em>number</em>
-              
-    &lt;nom&gt;
-  
-            
-              <em>tl[4]['lem']</em>
-              <em>tl[4]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>&lt;nom&gt;<sub>b2</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em>$<em>number</em>&lt;nom&gt;<sub>b3</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3376,49 +2168,20 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        case-mangler(
-          
-    $4
-        )
+        case-mangler($4)
   
         
     Output: 
           
-    [
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_nominal']</em>
-              <em>tl[3]['a_number']</em>
-              
-    &lt;nom&gt;
-  
-            
-              <em>tl[4]['lem']</em>
-              <em>tl[4]['a_nominal']</em>
-              <em>tl[4]['a_number']</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em><em>tl[3]['a_number']</em>&lt;nom&gt;<sub>b2</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_nominal']</em><em>tl[4]['a_number']</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3438,53 +2201,22 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        case-mangler(
-          
-    $4
-        )
+        case-mangler($4)
   
-        comparison-mangler(
-          
-    $3
-        )
+        comparison-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_adj']</em>
-              <em>comparison</em>
-              <em>tl[4]['a_number']</em>
-              <em>adpcase</em>
-            
-              <em>tl[4]['lem']</em>
-              <em>tl[4]['a_nominal']</em>
-              <em>tl[4]['a_number']</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[3]['lem']</em><em>tl[3]['a_adj']</em>$<em>comparison</em><em>tl[4]['a_number']</em>$<em>adpcase</em><sub>b1</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_nominal']</em><em>tl[4]['a_number']</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3502,44 +2234,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              
-    &lt;gen&gt;
-  
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>&lt;gen&gt;<em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3557,44 +2263,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              
-    &lt;nom&gt;
-  
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>&lt;nom&gt;<sub>b2</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3612,42 +2292,20 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>adpmaybe</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [<em>tl[3]['lem']</em><em>tl[3]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b1</sub><br>$<em>adpmaybe</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3665,47 +2323,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        comparison-mangler(
-          
-    $2
-        )
+        comparison-mangler($2)
   
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_adj']</em>
-              <em>comparison</em>
-              <em>number</em>
-              
-    &lt;ess&gt;
-  
-            
-              <em>tl[3]['lem']</em> 
-              <em>tl[3]['a_noun']</em> 
-              <em>number</em> 
-              
-    &lt;ess&gt;
-  
-            ]<sub>NP
-              
-    &lt;NP&gt;
-  
-              
-    &lt;ESS&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_adj']</em>$<em>comparison</em>$<em>number</em>&lt;ess&gt;<sub>b2</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_noun']</em>$<em>number</em>&lt;ess&gt;]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;&lt;ESS&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -3723,42 +2352,19 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
-        comparison-mangler(
-          
-    $2
-        )
+        comparison-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_adj']</em>
-              <em>comparison</em>
-              <em>number</em>
-              <em>case</em>
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_noun']</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>NP
-              
-    &lt;NP&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_adj']</em>$<em>comparison</em>$<em>number</em>$<em>case</em><sub>b2</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_noun']</em>$<em>number</em>$<em>case</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>number</em>&gt;
+  &lt;$<em>case</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3774,42 +2380,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_verb']</em>
-              
-    "+tu"
-  
-              
-    &lt;adj.pos&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_noun']</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>NP
-              
-    &lt;NP&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>"+tu"&lt;adj.pos&gt;$<em>number</em>$<em>case</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em>$<em>case</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>number</em>&gt;
+  &lt;$<em>case</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3827,51 +2408,21 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        compstuff-mangler(
-          
-    $2
-        )
+        compstuff-mangler($2)
   
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        number-mangler(
-          
-    $3
-        )
+        number-mangler($3)
   
-        comparison-mangler(
-          
-    $1
-        )
+        comparison-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_adj']</em>
-              <em>comparison</em>
-              <em>number</em>
-              <em>case</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>compstuff</em>
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_noun']</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>NP
-              
-    &lt;NP&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_adj']</em>$<em>comparison</em>$<em>number</em>$<em>case</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>compstuff</em><em>tl[3]['lem']</em><em>tl[3]['a_noun']</em>$<em>number</em>$<em>case</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>number</em>&gt;
+  &lt;$<em>case</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3887,42 +2438,19 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        comparison-mangler(
-          
-    $1
-        )
+        comparison-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_adj']</em>
-              <em>comparison</em>
-              <em>number</em>
-              <em>case</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_noun']</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>NP
-              
-    &lt;NP&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_adj']</em>$<em>comparison</em>$<em>number</em>$<em>case</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em>$<em>case</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>number</em>&gt;
+  &lt;$<em>case</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -3939,49 +2467,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
-        pers-mangler(
-          
-    $2
-        )
+        pers-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_nominal']</em>
-              <em>tl[1]['a_number']</em>
-              
-    &lt;ade&gt;
-  
-          
-            <em>tl[2]['lem']</em> 
-            <em>tl[2]['a_verb']</em> 
-            
-    &lt;actv&gt;
-   
-            <em>tense</em> 
-            
-    &lt;p3.sg&gt;
-   
-          ]<sub>NP
-              
-    &lt;N&gt;
-  
-              
-    &lt;ADE&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_nominal']</em><em>tl[1]['a_number']</em>&lt;ade&gt;<sub>b</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_verb']</em>&lt;actv&gt;$<em>tense</em>&lt;p3.sg&gt;]<sub>NP&lt;&lt;N&gt;&gt;
+  &lt;&lt;ADE&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -3998,55 +2495,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        pers-mangler(
-          
-    $2
-        )
+        pers-mangler($2)
   
         
     Output: 
           
-    [
-              
-    "olla"
-       
-              
-    &lt;vaux&gt;
-   
-              
-    &lt;actv&gt;
-   
-              <em>tense</em> 
-              <em>pers</em> 
-            
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_verb']</em> 
-              
-    &lt;actv&gt;
-   
-              <em>tl[1]['a_perf']</em> 
-              
-    &lt;pos.nom&gt;
-   
-              <em>number</em>   
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;PERF&gt;
-  
-            </sub>
+    ["olla"&lt;vaux&gt;&lt;actv&gt;$<em>tense</em>$<em>pers</em><sub>b</sub><br><em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;actv&gt;<em>tl[1]['a_perf']</em>&lt;pos.nom&gt;$<em>number</em>]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;PERF&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4063,34 +2523,16 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em> 
-              <em>tl[2]['a_noun']</em> 
-              <em>number</em> 
-              
-    &lt;ess&gt;
-  
-            ]<sub>NP
-              
-    &lt;N&gt;
-  
-              
-    &lt;ESS&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em>&lt;ess&gt;]<sub>NP&lt;&lt;N&gt;&gt;
+  &lt;&lt;ESS&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4106,37 +2548,16 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        infinite-mangler(
-          
-    $1
-        )
+        infinite-mangler($1)
   
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_verb']</em> 
-              
-    &lt;pasv&gt;
-   
-              <em>tense</em> 
-              
-    &lt;impers&gt;
-  
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;AUX&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;pasv&gt;$<em>tense</em>&lt;impers&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;AUX&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4152,49 +2573,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        infinite-mangler(
-          
-    $1
-        )
+        infinite-mangler($1)
   
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
-        pers-mangler(
-          
-    $2
-        )
+        pers-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>     
-              <em>tl[2]['a_verb']</em> 
-              
-    &lt;actv&gt;
-   
-              <em>tense</em> 
-              <em>pers</em> 
-            
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_verb']</em>
-              
-    &lt;actv&gt;
-   
-              <em>tl[1]['a_inf']</em>
-              <em>tl[1]['a_number']</em> 
-              <em>case</em>
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;AUX&gt;
-  
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_verb']</em>&lt;actv&gt;$<em>tense</em>$<em>pers</em><sub>b</sub><br><em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;actv&gt;<em>tl[1]['a_inf']</em><em>tl[1]['a_number']</em>$<em>case</em>]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;AUX&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4213,66 +2603,20 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        tensemood-mangler(
-          
-    $1
-        )
+        tensemood-mangler($1)
   
-        voice-mangler(
-          
-    $1
-        )
+        voice-mangler($1)
   
-        pers-mangler(
-          
-    $1
-        )
+        pers-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
         
     Output: 
           
-    [
-              
-    "ei"
-  
-              
-    &lt;vblex.neg.actv&gt;
-  
-              <em>pers</em>
-            
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_verb']</em>
-              
-    &lt;pasv&gt;
-  
-              <em>tense</em>
-              
-    &lt;impers.conneg&gt;
-  
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_verb']</em>
-              
-    "+tu"
-  
-              
-    &lt;adj.pos&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;NEG&gt;
-  
-            </sub>
+    ["ei"&lt;vblex.neg.actv&gt;$<em>pers</em><sub>b</sub><br><em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;pasv&gt;$<em>tense</em>&lt;impers.conneg&gt;<sub>b</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_verb']</em>"+tu"&lt;adj.pos&gt;$<em>number</em>$<em>case</em>]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;NEG&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4288,51 +2632,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        tensemood-mangler(
-          
-    $1
-        )
+        tensemood-mangler($1)
   
-        pers-mangler(
-          
-    $1
-        )
+        pers-mangler($1)
   
-        conneg-mangler(
-          
-    $1
-        )
+        conneg-mangler($1)
   
         
     Output: 
           
-    [
-              
-    "ei"
-  
-              
-    &lt;vblex.neg.actv&gt;
-  
-              <em>pers</em>
-            
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_verb']</em>
-              
-    &lt;actv&gt;
-  
-              <em>tense</em>
-              <em>number</em>
-              
-    &lt;conneg&gt;
-  
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;NEG&gt;
-  
-            </sub>
+    ["ei"&lt;vblex.neg.actv&gt;$<em>pers</em><sub>b</sub><br><em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;actv&gt;$<em>tense</em>$<em>number</em>&lt;conneg&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;NEG&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4348,51 +2659,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        tensemood-mangler(
-          
-    $2
-        )
+        tensemood-mangler($2)
   
-        pers-mangler(
-          
-    $2
-        )
+        pers-mangler($2)
   
-        conneg-mangler(
-          
-    $2
-        )
+        conneg-mangler($2)
   
         
     Output: 
           
-    [
-              
-    "ei"
-  
-              
-    &lt;vblex.neg.actv&gt;
-  
-              <em>pers</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_verb']</em>
-              
-    &lt;actv&gt;
-  
-              <em>tense</em>
-              <em>number</em>
-              
-    &lt;conneg&gt;
-  
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;NEG&gt;
-  
-            </sub>
+    ["ei"&lt;vblex.neg.actv&gt;$<em>pers</em><sub>b</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_verb']</em>&lt;actv&gt;$<em>tense</em>$<em>number</em>&lt;conneg&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;NEG&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4410,43 +2688,19 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
-        compstuff-mangler(
-          
-    $2
-        )
+        compstuff-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>compstuff</em>
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_noun']</em>
-              <em>tl[1]['a_number']</em>
-              <em>case</em>
-            ]<sub>NP
-              
-    &lt;N&gt;
-  
-          </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>compstuff</em><em>tl[3]['lem']</em><em>tl[3]['a_noun']</em><em>tl[1]['a_number']</em>$<em>case</em>]<sub>NP&lt;&lt;N&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4462,36 +2716,19 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_noun']</em>
-              <em>number</em>
-              <em>tl[1]['a_case']</em>
-            ]<sub>NP
-              
-    &lt;N&gt;
-  
-              <em>number</em>
-              <em>case</em>
-            </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em><em>tl[1]['a_case']</em>]<sub>NP&lt;&lt;N&gt;&gt;
+  &lt;$<em>number</em>&gt;
+  &lt;$<em>case</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -4507,36 +2744,19 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_noun']</em>
-              <em>number</em>
-              <em>tl[1]['a_case']</em>
-            ]<sub>NP
-              
-    &lt;N&gt;
-  
-              <em>number</em>
-              <em>case</em>
-          </sub>
+    [<em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>$<em>number</em><em>tl[1]['a_case']</em>]<sub>NP&lt;&lt;N&gt;&gt;
+  &lt;$<em>number</em>&gt;
+  &lt;$<em>case</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -4550,24 +2770,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_prn']</em>
-              <em>tl[1]['a_number']</em>
-              <em>tl[1]['a_case']</em>
-            ]<sub>PRNP
-              
-    &lt;PRN&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_prn']</em><em>tl[1]['a_number']</em><em>tl[1]['a_case']</em>]<sub>PRNP&lt;&lt;PRN&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4587,39 +2796,16 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>adpmaybe</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            
-              <em>tl[3]['whole']</em>
-            
-              <em>tl[4]['lem']</em>
-              <em>tl[4]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [$<em>adpmaybe</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>$<em>adpcase</em><sub>b2</sub><br><em>tl[3]['whole']</em><sub>b3</sub><br><em>tl[4]['lem']</em><em>tl[4]['a_nominal']</em>$<em>number</em>$<em>adpcase</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -4635,32 +2821,16 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
         
     Output: 
           
-    [
-              <em>adpmaybe</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              <em>adpcase</em>
-            ]<sub>NP
-                
-    &lt;NP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [$<em>adpmaybe</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>$<em>adpcase</em>]<sub>NP&lt;&lt;NP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -4676,40 +2846,18 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        possessive-mangler(
-          
-    $1
-        )
+        possessive-mangler($1)
   
-        number-mangler(
-          
-    $2
-        )
+        number-mangler($2)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
         
     Output: 
           
-    [
-              <em>prnmaybe</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>number</em>
-              <em>case</em>
-              <em>possess</em>
-            ]<sub>NP
-              
-    &lt;N&gt;
-  
-              
-    &lt;POSS&gt;
-  
-            </sub>
+    [$<em>prnmaybe</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em>$<em>number</em>$<em>case</em>$<em>possess</em>]<sub>NP&lt;&lt;N&gt;&gt;
+  &lt;&lt;POSS&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4727,36 +2875,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        numtype-mangler(
-          
-    $1
-        )
+        numtype-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_num']</em>
-              
-    &lt;card.sg.nom&gt;
-  
-            
-              <em>tl[2]['lem']</em>
-              
-    &lt;num.card.sg.par&gt;
-  
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_noun']</em>
-              
-    &lt;sg.par&gt;
-   
-            ]<sub>MeasureP
-                
-    &lt;CountXP&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_num']</em>&lt;card.sg.nom&gt;<sub>b1</sub><br><em>tl[2]['lem']</em>&lt;num.card.sg.par&gt;<sub>b2</sub><br><em>tl[3]['lem']</em><em>tl[3]['a_noun']</em>&lt;sg.par&gt;]<sub>MeasureP&lt;&lt;CountXP&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4772,32 +2897,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        numtype-mangler(
-          
-    $1
-        )
+        numtype-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_num']</em>
-              <em>numtype</em>
-              
-    &lt;sg.nom&gt;
-  
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_noun']</em>
-              
-    &lt;sg.par&gt;
-   
-            ]<sub>MeasureP
-                
-    &lt;CountP&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_num']</em>$<em>numtype</em>&lt;sg.nom&gt;<sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_noun']</em>&lt;sg.par&gt;]<sub>MeasureP&lt;&lt;CountP&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4813,35 +2919,16 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        adp-mangler(
-          
-    $1
-        )
+        adp-mangler($1)
   
-        numtype-mangler(
-          
-    $2
-        )
+        numtype-mangler($2)
   
         
     Output: 
           
-    [
-              <em>adpmaybe</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_num']</em>
-              <em>numtype</em>
-              
-    &lt;sg&gt;
-  
-              <em>adpcase</em>
-            ]<sub>NumP
-                
-    &lt;NumP&gt;
-  
-                <em>adpcase</em>
-            </sub>
+    [$<em>adpmaybe</em><sub>b1</sub><br><em>tl[2]['lem']</em><em>tl[2]['a_num']</em>$<em>numtype</em>&lt;sg&gt;$<em>adpcase</em>]<sub>NumP&lt;&lt;NumP&gt;&gt;
+  &lt;$<em>adpcase</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -4861,38 +2948,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $3
-        )
+        case-mangler($3)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_nominal']</em>
-              <em>tl[1]['a_number']</em>
-              
-    &lt;gen&gt;
-  
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_nominal']</em>
-              <em>tl[2]['a_number']</em>
-              
-    &lt;gen&gt;
-  
-            
-              <em>tl[3]['lem']</em>
-              <em>tl[3]['a_noun']</em>
-              <em>tl[3]['a_number']</em>
-              <em>case</em>
-            ]<sub>N
-              
-    &lt;N.CMP&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_nominal']</em><em>tl[1]['a_number']</em>&lt;gen&gt;<em>tl[2]['lem']</em><em>tl[2]['a_nominal']</em><em>tl[2]['a_number']</em>&lt;gen&gt;<em>tl[3]['lem']</em><em>tl[3]['a_noun']</em><em>tl[3]['a_number']</em>$<em>case</em>]<sub>N&lt;&lt;N.CMP&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4908,33 +2970,15 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        compstuff-mangler(
-          
-    $1
-        )
+        compstuff-mangler($1)
   
-        case-mangler(
-          
-    $2
-        )
+        case-mangler($2)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_nominal']</em>
-              <em>compstuff</em>
-            
-              <em>tl[2]['lem']</em>
-              <em>tl[2]['a_noun']</em>
-              <em>tl[2]['a_number']</em>
-              <em>case</em>
-            ]<sub>N
-              
-    &lt;N.CMP&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_nominal']</em>$<em>compstuff</em><em>tl[2]['lem']</em><em>tl[2]['a_noun']</em><em>tl[2]['a_number']</em>$<em>case</em>]<sub>N&lt;&lt;N.CMP&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4948,24 +2992,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_noun']</em>
-              <em>tl[1]['a_number']</em>
-              <em>case</em>
-            ]<sub>NP
-              
-    &lt;N.FOOFOO&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_noun']</em><em>tl[1]['a_number']</em>$<em>case</em>]<sub>NP&lt;&lt;N.FOOFOO&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -4979,38 +3012,17 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
-        comparison-mangler(
-          
-    $1
-        )
+        comparison-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_adj']</em>
-              <em>comparison</em>
-              
-              <em>number</em>
-              
-    &lt;nom&gt;
-  
-            ]<sub>AP
-              
-    &lt;A&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_adj']</em>$<em>comparison</em>$<em>number</em>&lt;nom&gt;]<sub>AP&lt;&lt;A&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5024,29 +3036,15 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_prn']</em>
-              <em>number</em>
-              <em>case</em>
-            ]<sub>PrnP
-              
-    &lt;PRN&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_prn']</em>$<em>number</em>$<em>case</em>]<sub>PrnP&lt;&lt;PRN&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5060,26 +3058,13 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        numtype-mangler(
-          
-    $1
-        )
+        numtype-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_num']</em>
-              <em>numtype</em>
-              
-    &lt;sg.nom&gt;
-   
-            ]<sub>NumP
-              
-    &lt;Num&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_num']</em>$<em>numtype</em>&lt;sg.nom&gt;]<sub>NumP&lt;&lt;Num&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5096,15 +3081,9 @@
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_adp']</em>
-            ]<sub>AdpP
-                
-    &lt;Adp&gt;
-  
-                <em>sl[1]['a_case']</em>
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_adp']</em>]<sub>AdpP&lt;&lt;Adp&gt;&gt;
+  &lt;<em>sl[1]['a_case']</em>&gt;
+  </sub>
         
       </code></pre>
                
@@ -5121,21 +3100,9 @@
         
     Output: 
           
-    [
-              
-    "ei"
-  
-              
-    &lt;vblex.neg.actv.p3.sg&gt;
-  
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;NEG&gt;
-  
-            </sub>
+    ["ei"&lt;vblex.neg.actv.p3.sg&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;NEG&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5152,18 +3119,8 @@
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_prn']</em>
-              <em>tl[1]['a_number']</em>
-              
-    &lt;gen&gt;
-  
-            ]<sub>PossP
-              
-    &lt;Poss&gt;
-  
-          </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_prn']</em><em>tl[1]['a_number']</em>&lt;gen&gt;]<sub>PossP&lt;&lt;Poss&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5180,11 +3137,8 @@
         
     Output: 
           
-    []<sub>ArtP
-              
-    &lt;ART&gt;
-  
-            </sub>
+    [<sub>b</sub><br>]<sub>ArtP&lt;&lt;ART&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5198,29 +3152,15 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        case-mangler(
-          
-    $1
-        )
+        case-mangler($1)
   
-        number-mangler(
-          
-    $1
-        )
+        number-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_det']</em>
-              <em>tl[1]['a_number']</em>
-              <em>tl[1]['a_case']</em>
-            ]<sub>DetP
-              
-    &lt;Det&gt;
-  
-          </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_det']</em><em>tl[1]['a_number']</em><em>tl[1]['a_case']</em><sub>b1</sub><br>]<sub>DetP&lt;&lt;Det&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5234,32 +3174,14 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        tensemood-mangler(
-          
-    $1
-        )
+        tensemood-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_verb']</em> 
-              
-    &lt;pasv&gt;
-   
-              <em>tl[1]['a_perf']</em> 
-              
-    &lt;pos.nom.sg&gt;
-   
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;PERF&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;pasv&gt;<em>tl[1]['a_perf']</em>&lt;pos.nom.sg&gt;]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;PERF&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5274,31 +3196,14 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        infinite-mangler(
-          
-    $1
-        )
+        infinite-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em> 
-              <em>tl[1]['a_verb']</em>
-              
-    &lt;actv&gt;
-   
-              <em>tl[1]['a_inf']</em>
-              <em>tl[1]['a_number']</em> 
-              <em>case</em>
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-              
-    &lt;INF&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;actv&gt;<em>tl[1]['a_inf']</em><em>tl[1]['a_number']</em>$<em>case</em>]<sub>VP&lt;&lt;V&gt;&gt;
+  &lt;&lt;INF&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5312,32 +3217,15 @@
                </ul>
                
                <div>Action:</div><pre><code>
-        tensemood-mangler(
-          
-    $1
-        )
+        tensemood-mangler($1)
   
-        pers-mangler(
-          
-    $1
-        )
+        pers-mangler($1)
   
         
     Output: 
           
-    [
-              <em>tl[1]['lem']</em>
-              <em>tl[1]['a_verb']</em>
-              
-    &lt;actv&gt;
-  
-              <em>tense</em> 
-              <em>pers</em> 
-            ]<sub>VP
-              
-    &lt;V&gt;
-  
-            </sub>
+    [<em>tl[1]['lem']</em><em>tl[1]['a_verb']</em>&lt;actv&gt;$<em>tense</em>$<em>pers</em>]<sub>VP&lt;&lt;V&gt;&gt;
+  </sub>
         
       </code></pre>
                
@@ -5354,13 +3242,8 @@
         
     Output: 
           
-    [
-              <em>tl[1]['whole']</em>
-            ]<sub>sent
-              
-    &lt;SENT&gt;
-  
-            </sub>
+    [<em>tl[1]['whole']</em>]<sub>sent&lt;&lt;SENT&gt;&gt;
+  </sub>
         
       </code></pre>
                
