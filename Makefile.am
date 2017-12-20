@@ -242,7 +242,22 @@ $(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
 $(BASENAME).$(PREFIX2).dix.html: $(BASENAME).$(PREFIX1).dix dix2html.xsl
 	$(SAXON) -s:$< dix2html.xsl from=German to=Finnish invert=true > $@
 
+$(BASENAME).$(PREFIX1).t1x.html: $(BASENAME).$(PREFIX1).t1x tix2html.xsl
+	$(SAXON) -s:$< tix2html.xsl > $@
+
 $(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x tix2html.xsl
+	$(SAXON) -s:$< tix2html.xsl > $@
+
+$(BASENAME).$(PREFIX1).t2x.html: $(BASENAME).$(PREFIX1).t2x tix2html.xsl
+	$(SAXON) -s:$< tix2html.xsl > $@
+
+$(BASENAME).$(PREFIX2).t2x.html: $(BASENAME).$(PREFIX2).t2x tix2html.xsl
+	$(SAXON) -s:$< tix2html.xsl > $@
+
+$(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x tix2html.xsl
+	$(SAXON) -s:$< tix2html.xsl > $@
+
+$(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x tix2html.xsl
 	$(SAXON) -s:$< tix2html.xsl > $@
 
 endif

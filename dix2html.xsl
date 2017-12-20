@@ -29,22 +29,12 @@
         <div class="container">
           <div class="row">
             <div id="header" class="col-sm-12">
-              <h4>
-                <a class="brand" href="/apertium-fin-deu/">apertium-fin-deu</a>
-                <small>Finnish–German dictionary for rule-based
-                  machine translation</small>
-              </h4>
+              <xsl:copy-of select="document('header.html')"/>
             </div>
           </div>
           <div class="row">
             <div id="navigation" class="col-sm-2">
-              <nav>
-                <ul class="nav nav-list">
-                  <li><a href="/apertium-fin-deu/">Home</a></li>
-                  <li><a class="external" href="//github.com/flammie/apertium-fin-deu/#readme">README</a></li>
-                  <li><a href="/apertium-fin-deu/statistics.html">Statistics</a></li>
-                </ul>
-              </nav>
+              <xsl:copy-of select="document('navigation.html')"/>
             </div>
             <div id="content" class="col-sm-10">
               <h1 id="dictionary">Dictionary visualisation:
@@ -56,7 +46,7 @@
               </p>
               <h2>Alphabets</h2>
               <xsl:apply-templates select="alphabet"/>
-              <h2>Apertium tags (for POS and MSD features</h2>
+              <h2>Apertium tags (for POS and MSD features)</h2>
               <xsl:apply-templates select="sdefs"/>
               <h2>Words</h2>
               <xsl:apply-templates select="section"/>
@@ -64,10 +54,7 @@
           </div>
           <div class="row">
             <div id="footer" class="col-sm-12">
-              Documentation for
-              <a href="https://github.com/flammie/apertium-fin-deu">
-                apertium-fin-deu
-              </a>
+              <xsl:copy-of select="document('navigation.html')"/>
             </div>
           </div>
         </div>
