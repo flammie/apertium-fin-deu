@@ -54,7 +54,7 @@
           </div>
           <div class="row">
             <div id="footer" class="col-sm-12">
-              <xsl:copy-of select="document('navigation.html')"/>
+              <xsl:copy-of select="document('footer.html')"/>
             </div>
           </div>
         </div>
