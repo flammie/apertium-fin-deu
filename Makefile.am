@@ -2,7 +2,6 @@
 ## Makefile for Finnish--German
 ###############################################################################
 
-VERSION=0.0.0
 LANG1=fin
 LANG2=deu
 PREFIX1=$(LANG1)-$(LANG2)
@@ -259,5 +258,53 @@ $(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x tix2html.xsl
 
 $(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x tix2html.xsl
 	$(SAXON) -s:$< tix2html.xsl > $@
+
+stats-$(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+stats-$(BASENAME).$(PREFIX1).t1x.html: $(BASENAME).$(PREFIX1).t1x dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+stats-$(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+stats-$(BASENAME).$(PREFIX1).t2x.html: $(BASENAME).$(PREFIX1).t2x dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+stats-$(BASENAME).$(PREFIX2).t2x.html: $(BASENAME).$(PREFIX2).t2x dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+stats-$(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+stats-$(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x dix2stats.xsl
+	$(SAXON) -s:$< dix2stats.xsl > $@
+
+statistics.html: stats-$(BASENAME).$(PREFIX1).dix.html \
+			stats-$(BASENAME).$(PREFIX1).t1x.html \
+			stats-$(BASENAME).$(PREFIX2).t1x.html \
+			stats-$(BASENAME).$(PREFIX1).t2x.html \
+			stats-$(BASENAME).$(PREFIX2).t2x.html \
+			stats-$(BASENAME).$(PREFIX1).t3x.html \
+			stats-$(BASENAME).$(PREFIX2).t3x.html
+	$(AWK) '/DOCTYPE/,/<\/h1>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX1).dix.html > $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX1).dix.html | fgrep -v '</div>' >> $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX1).t1x.html | fgrep -v '</div>' >> $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX1).t2x.html | fgrep -v '</div>' >> $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX1).t3x.html | fgrep -v '</div>' >> $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX2).t1x.html | fgrep -v '</div>' >> $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX2).t2x.html | fgrep -v '</div>' >> $@
+	$(AWK) '/<h2>/,/<\/div>/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX2).t3x.html | fgrep -v '</div>' >> $@
+	echo '</div><div class="row">' >> $@
+	$(AWK) '/<div id="footer"/,/<\/html/ {print;}' < \
+		stats-$(BASENAME).$(PREFIX1).dix.html | fgrep -v '</div>' >> $@
 
 endif

@@ -37,12 +37,11 @@
               <xsl:copy-of select="document('navigation.html')"/>
             </div>
             <div id="content" class="col-sm-10">
-              <h1 id="dictionary">Statistics styles
+              <h1 id="dictionary">Statistics
                 Apertium-fin-deu–Finnish–German dictionary and RBMT resources
               </h1>
-              <p style="font-variant: italic">
-                This is a visualisation of an apertium transfer system
-              </p>
+              <h2><code><xsl:value-of 
+                    select="tokenize(base-uri(), '/')[last()]"/></code></h2>
               <xsl:apply-templates/>
             </div>
           </div>
@@ -57,7 +56,7 @@
   </xsl:template>
 
   <xsl:template match="alphabet">
-    <h2>Alphabet</h2>
+    <h3>Alphabet</h3>
     <p>
       There are
       <xsl:value-of select="string-length(.)"/>
@@ -66,7 +65,7 @@
   </xsl:template>
       
   <xsl:template match="sdefs">
-    <h2>Tags (Multichar Symbols)</h2>
+    <h3>Tags (Multichar Symbols)</h3>
     <p>
       There are
       <xsl:value-of select="count(sdef)"/>
@@ -75,7 +74,7 @@
   </xsl:template>
 
   <xsl:template match="pardefs">
-    <h2>Paradigms</h2>
+    <h3>Paradigms</h3>
     <p>
       There are
       <xsl:value-of select="count(pardef)"/>
@@ -84,7 +83,7 @@
   </xsl:template>
 
   <xsl:template match="section">
-    <h2>Dictionary <xsl:value-of select="@id"/></h2>
+    <h3>Dictionary <xsl:value-of select="@id"/></h3>
     <p>
       There are
       <xsl:value-of select="count(e)"/>
@@ -93,7 +92,7 @@
   </xsl:template>
 
   <xsl:template match="section-def-cats">
-    <h2>Categories (parts of chunks)</h2>
+    <h3>Categories (parts of chunks)</h3>
     <p>
       There are
       <xsl:value-of select="count(def-cat)"/>
@@ -103,7 +102,7 @@
 
 
   <xsl:template match="section-def-attrs">
-    <h2>Attributes</h2>
+    <h3>Attributes</h3>
     <p>
       There are
       <xsl:value-of select="count(def-attr)"/>
@@ -113,7 +112,7 @@
 
 
   <xsl:template match="section-def-macros">
-    <h2>Macros</h2>
+    <h3>Macros</h3>
     <p>
       There are
       <xsl:value-of select="count(def-macro)"/>
@@ -122,7 +121,7 @@
   </xsl:template>
 
   <xsl:template match="section-rules">
-    <h2>Rules</h2>
+    <h3>Rules</h3>
     <p>
       There are
       <xsl:value-of select="count(rule)"/>
