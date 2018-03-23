@@ -29,7 +29,13 @@ One of the points of these github pages is to provide statistics and
 visualisations.
 
 1. [Statistics](statistics.html)
-1. [Finnish–German word-list](apertium-fin-deu.fin-deu.html)
-1. [German–Finnish word-list](apertium-fin-deu.deu-fin.html)
+1. [Finnish–German word-list](apertium-fin-deu.fin-deu.dix.html)
+1. [German–Finnish word-list](apertium-fin-deu.deu-fin.dix.html)
+1. [Finnish–German chunking rules](apertium-fin-deu.fin-deu.t1x.html)
+1. [German–Finnish chunking rules](apertium-fin-deu.deu-fin.t1x.html)
+1. [Finnish–German re-ordering rules](apertium-fin-deu.fin-deu.t2x.html)
+1. [German–Finnish re-ordering rules](apertium-fin-deu.deu-fin.t2x.html)
+1. [Finnish–German more rules](apertium-fin-deu.fin-deu.t3x.html)
+1. [German–Finnish more rules](apertium-fin-deu.deu-fin.t3x.html)
 
 <!-- vim: set ft=markdown -->
