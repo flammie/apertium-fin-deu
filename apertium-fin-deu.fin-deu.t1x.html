@@ -117,6 +117,17 @@
                      </tr>
                      
                      <tr>
+                        <td>num</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
                         <td>verb</td>
                         <td>
                            <ul>
@@ -128,6 +139,23 @@
                               <li><code>&lt;vbmod.*&gt;</code></li>
                               
                               <li><code>&lt;vbser.*&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>pastverb</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;vblex.*.past.*&gt;</code></li>
+                              
+                              <li><code>&lt;vaux.*.past.*&gt;</code></li>
+                              
+                              <li><code>&lt;vbmod.*.past.*&gt;</code></li>
+                              
+                              <li><code>&lt;vbser.*.past.*&gt;</code></li>
                               
                            </ul>
                         </td>
@@ -219,6 +247,17 @@
                            <ul>
                               
                               <li><code>&lt;adj&gt;</code></li>
+                              
+                           </ul>
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td>a_num</td>
+                        <td>
+                           <ul>
+                              
+                              <li><code>&lt;num&gt;</code></li>
                               
                            </ul>
                         </td>
@@ -353,6 +392,46 @@
                      
                   </ol></code>
                
+               <h3>num-mangler</h3>
+               <div>Parametres: 1</div><code>
+                  <ol>
+                     
+                     <li>
+                        <ol>
+                           
+                           <li>if 
+                              <li>
+                                 <ol>
+                                    
+                                    <li><em>sl[1]['lem']</em> ≟ 
+                                       "yksi"
+                                       
+                                    </li>
+                                    
+                                 </ol>
+                              </li> then:
+                              <ol>
+                                 <li>
+                                    let <em>tl[1]['a_number']</em> ≔ &lt;sg&gt;
+                                 </li>
+                              </ol>
+                           </li>
+                           
+                           <li>else:
+                              <ol>
+                                 
+                                 <li>
+                                    let <em>tl[1]['a_number']</em> ≔ &lt;pl&gt;
+                                 </li>
+                                 
+                              </ol>
+                           </li>
+                           
+                        </ol>
+                     </li>
+                     
+                  </ol></code>
+               
                <h3>case-mangler</h3>
                <div>Parametres: 1</div><code>
                   <ol>
@@ -482,6 +561,54 @@
                <p>The actual rules concerning stuff.</p>
                
                
+               <h3>Compose syntactic past form</h3>
+               
+               <h4>Matching pattern:</h4>
+               <ol>
+                  
+                  <li>pastverb</li>
+                  
+               </ol>
+               
+               <h4>Action:</h4><code>
+                  <ol>
+                     
+                     <li>tensemood-mangler(
+                        $1
+                        )
+                     </li>
+                     
+                     <li>Output: 
+                        <ol>
+                           
+                           <li>
+                              [
+                              <ol>
+                                 <li>
+                                    
+                                    "haben"
+                                    
+                                    &lt;vbhaver.pri&gt;
+                                    <em>tl[1]['a_prsnum']</em>
+                                    
+                                 </li>
+                                 <li><sub>b0</sub><br></li>
+                                 <li>
+                                    <em>tl[1]['lem']</em>
+                                    <em>tl[1]['a_verb']</em>
+                                    &lt;pp&gt;
+                                    
+                                 </li>
+                              </ol>]<sub>vp
+                                 &lt;VP.PAST&gt;
+                                 </sub></li>
+                           
+                        </ol>
+                     </li>
+                     
+                  </ol></code>
+               
+               
                <h3>Drop voice from verbs, mangle tense mood</h3>
                
                <h4>Matching pattern:</h4>
@@ -596,6 +723,45 @@
                                  </li>
                               </ol>]<sub>np
                                  &lt;AP&gt;
+                                 </sub></li>
+                           
+                        </ol>
+                     </li>
+                     
+                  </ol></code>
+               
+               
+               <h3>Drop case, mangle num of nums... German is weirdly tagged</h3>
+               
+               <h4>Matching pattern:</h4>
+               <ol>
+                  
+                  <li>num</li>
+                  
+               </ol>
+               
+               <h4>Action:</h4><code>
+                  <ol>
+                     
+                     <li>num-mangler(
+                        $1
+                        )
+                     </li>
+                     
+                     <li>Output: 
+                        <ol>
+                           
+                           <li>
+                              [
+                              <ol>
+                                 <li>
+                                    <em>tl[1]['lem']</em>
+                                    <em>tl[1]['a_num']</em>
+                                    <em>tl[1]['a_number']</em>
+                                    
+                                 </li>
+                              </ol>]<sub>nump
+                                 &lt;NumP&gt;
                                  </sub></li>
                            
                         </ol>
