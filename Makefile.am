@@ -250,13 +250,13 @@ test-voc: test-gen-fin-deu \
 #
 if CAN_SAXON
 bidix2html.xslt:
-	wget https://raw.githubusercontent.com/flammie/apevis-xslt/$@
+	wget https://raw.githubusercontent.com/flammie/apevis-xslt/master/$@
 
 tix2html.xslt:
-	wget https://raw.githubusercontent.com/flammie/apevis-xslt/$@
+	wget https://raw.githubusercontent.com/flammie/apevis-xslt/master/$@
 
 dix2stats.xslt:
-	wget https://raw.githubusercontent.com/flammie/apevis-xslt/$@
+	wget https://raw.githubusercontent.com/flammie/apevis-xslt/master/$@
 
 $(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix bidix2html.xslt
 	$(SAXON) -s:$< bidix2html.xslt from=Finnish to=German pair=fin-deu antipair=deu-fin > $@
@@ -264,44 +264,44 @@ $(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix bidix2html.xslt
 $(BASENAME).$(PREFIX2).dix.html: $(BASENAME).$(PREFIX1).dix bidix2html.xslt
 	$(SAXON) -s:$< bidix2html.xslt from=German to=Finnish pair=fin-deu antipair=deu-fin  invert=true > $@
 
-$(BASENAME).$(PREFIX1).t1x.html: $(BASENAME).$(PREFIX1).t1x tix2html.xsl
-	$(SAXON) -s:$< tix2html.xsl from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
+$(BASENAME).$(PREFIX1).t1x.html: $(BASENAME).$(PREFIX1).t1x tix2html.xslt
+	$(SAXON) -s:$< tix2html.xslt from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
 
-$(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x tix2html.xsl
-	$(SAXON) -s:$< tix2html.xsl from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
+$(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x tix2html.xslt
+	$(SAXON) -s:$< tix2html.xslt from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
 
-$(BASENAME).$(PREFIX1).t2x.html: $(BASENAME).$(PREFIX1).t2x tix2html.xsl
-	$(SAXON) -s:$< tix2html.xsl from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
+$(BASENAME).$(PREFIX1).t2x.html: $(BASENAME).$(PREFIX1).t2x tix2html.xslt
+	$(SAXON) -s:$< tix2html.xslt from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
 
-$(BASENAME).$(PREFIX2).t2x.html: $(BASENAME).$(PREFIX2).t2x tix2html.xsl
-	$(SAXON) -s:$< tix2html.xsl  from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
+$(BASENAME).$(PREFIX2).t2x.html: $(BASENAME).$(PREFIX2).t2x tix2html.xslt
+	$(SAXON) -s:$< tix2html.xslt  from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
 
-$(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x tix2html.xsl
-	$(SAXON) -s:$< tix2html.xsl  from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
+$(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x tix2html.xslt
+	$(SAXON) -s:$< tix2html.xslt  from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
 
-$(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x tix2html.xsl
-	$(SAXON) -s:$< tix2html.xsl  from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
+$(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x tix2html.xslt
+	$(SAXON) -s:$< tix2html.xslt  from=Finnish to=German pair=fin-deu antipair=deu-fin  > $@
 
-stats-$(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX1).dix.html: $(BASENAME).$(PREFIX1).dix dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
-stats-$(BASENAME).$(PREFIX1).t1x.html: $(BASENAME).$(PREFIX1).t1x dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX1).t1x.html: $(BASENAME).$(PREFIX1).t1x dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
-stats-$(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX2).t1x.html: $(BASENAME).$(PREFIX2).t1x dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
-stats-$(BASENAME).$(PREFIX1).t2x.html: $(BASENAME).$(PREFIX1).t2x dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX1).t2x.html: $(BASENAME).$(PREFIX1).t2x dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
-stats-$(BASENAME).$(PREFIX2).t2x.html: $(BASENAME).$(PREFIX2).t2x dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX2).t2x.html: $(BASENAME).$(PREFIX2).t2x dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
-stats-$(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX1).t3x.html: $(BASENAME).$(PREFIX1).t3x dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
-stats-$(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x dix2stats.xsl
-	$(SAXON) -s:$< dix2stats.xsl > $@
+stats-$(BASENAME).$(PREFIX2).t3x.html: $(BASENAME).$(PREFIX2).t3x dix2stats.xslt
+	$(SAXON) -s:$< dix2stats.xslt > $@
 
 statistics.html: stats-$(BASENAME).$(PREFIX1).dix.html \
 			stats-$(BASENAME).$(PREFIX1).t1x.html \
