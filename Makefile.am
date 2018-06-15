@@ -13,7 +13,7 @@ TARGETS_COMMON = \
 	$(PREFIX1).automorf.hfst \
 	$(PREFIX1).rlx.bin \
 	$(PREFIX1).autobil.bin \
-		$(PREFIX1).autolex.bin \
+	$(PREFIX1).autolex.bin \
 	$(PREFIX1).autogen.bin \
 	$(PREFIX1).t1x.bin \
 	$(PREFIX1).t2x.bin \
@@ -22,9 +22,9 @@ TARGETS_COMMON = \
 	$(PREFIX2).rlx.bin \
 	$(PREFIX2).prep.cg3.bin \
 	$(PREFIX2).autobil.bin \
-		$(PREFIX2).autolex.bin \
+	$(PREFIX2).autolex.bin \
 	$(PREFIX2).autogen.hfst \
-    $(PREFIX2).t1x.bin \
+	$(PREFIX2).t1x.bin \
 	$(PREFIX2).t2x.bin \
 	$(PREFIX2).t3x.bin
 if CAN_LSX
@@ -33,7 +33,20 @@ endif
 
 
 # This include defines goals for install-modes, .deps/.d and .mode files:
-@ap_include@
+
+modes/fin-deu.mode: modes.xml
+	if ! test -d modes ; then \
+		$(MKDIR_P) modes/ ;\
+	fi
+	apertium-gen-modes $(srcdir)/modes.xml
+	mv -v fin-deu.mode $@
+
+modes/deu-fin.mode: modes.xml
+	if ! test -d modes ; then \
+		$(MKDIR_P) modes/ ;\
+	fi
+	apertium-gen-modes $(srcdir)/modes.xml
+	mv -v deu-fin.mode $@
 
 ###############################################################################
 ## Monolingual transducers
@@ -86,8 +99,8 @@ $(PREFIX2).prob: $(AP_SRC2)/$(LANG2).prob
 ## Disambiguation rules
 ###############################################################################
 
-$(PREFIX1).rlx.bin: $(AP_SRC1)/apertium-$(LANG1).$(LANG1).rlx
-	cg-comp $< $@
+$(PREFIX1).rlx.bin: $(AP_SRC1)/$(LANG1).rlx.bin
+	cp -v $< $@
 
 $(PREFIX2).rlx.bin: $(AP_SRC2)/apertium-$(LANG2).$(LANG2).rlx
 	cg-comp $< $@
@@ -122,7 +135,7 @@ $(PREFIX2).autolex.bin: $(BASENAME).$(PREFIX2).lrx
 ###
 
 $(PREFIX2).autosep.bin: $(BASENAME).$(PREFIX2).lsx
-	$(LSXCOMP) $< $@
+	$(LSXCOMP) lr $< $@
 
 ###############################################################################
 ## Structural transfer rules
@@ -170,6 +183,7 @@ $(PREFIX2).autopgen.bin: $(AP_SRC1)/$(LANG1).autopgen.bin
 EXTRA_DIST= \
 		$(BASENAME).$(PREFIX1).lrx \
 		$(BASENAME).$(PREFIX1).dix \
+		$(BASENAME).$(PREFIX2).lsx \
 		$(BASENAME).$(PREFIX2).lrx \
 		$(BASENAME).$(PREFIX1).t1x \
 		$(BASENAME).$(PREFIX1).t2x \
@@ -177,6 +191,7 @@ EXTRA_DIST= \
 		$(BASENAME).$(PREFIX2).t1x \
 		$(BASENAME).$(PREFIX2).t2x \
 		$(BASENAME).$(PREFIX2).t3x \
+		$(BASENAME).$(PREFIX2).prep.cg3 \
 		modes.xml
 
 ###############################################################################
@@ -195,10 +210,9 @@ apertium_fin_deu_DATA= \
 	$(BASENAME).$(PREFIX2).t2x \
 	$(BASENAME).$(PREFIX2).t3x
 
-# All modes are created by the same goal, listing several will just give problems with make -j2
-noinst_DATA=modes/$(PREFIX1).mode
-
-install-data-local: install-modes
+apertium_fin_deu_modesdir=$(prefix)/share/apertium/modes/
+apertium_fin_deu_modes_DATA=modes/$(PREFIX1).mode \
+							modes/$(PREFIX2).mode
 
 ###############################################################################
 ## Cleanup
@@ -206,7 +220,7 @@ install-data-local: install-modes
 
 CLEANFILES = $(TARGETS_COMMON)
 clean-local:
-	-rm -rf .deps modes
+	-rm -rf .deps modes *.mode
 
 ###############################################################################
 ## Test

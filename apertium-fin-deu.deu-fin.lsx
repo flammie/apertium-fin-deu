@@ -40,6 +40,10 @@
             <p><l>teilen<s n="vblex"/></l><r>mitteilen<s n="vblex"/></r></p><i><t/><j/></i>
             <par n="NP"/><p><l>mit<t/></l><r></r></p>
         </e>
+        <e lm="werfen vor" c="reproach (not: throw forward)">
+            <p><l>werfen<s n="vblex"/></l><r>vorwerfen<s n="vblex"/></r></p><i><t/><j/></i>
+            <par n="NP"/><p><l>vor<t/></l><r></r></p>
+        </e>
     </section>
 </dictionary>
 <!-- vim: set ft=xml foldmethod=marker: -->

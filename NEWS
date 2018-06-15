@@ -1,0 +1,13 @@
+# Noteworthy changes in version 0.0.3
+
+* perhaps first really functional release
+* fixed some autotools issues for the make target `distcheck`
+* actually wrote thi changelog
+
+# Noteworthy changes in version 0.0.2
+
+* fixed release tag
+
+# Noteworthy changes in version 0.0.1
+
+* first public relase
