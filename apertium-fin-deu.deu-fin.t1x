@@ -22,6 +22,10 @@
     <def-cat n="nochein2np">
       <cat-item lemma="noch ein" tags="det.*"/>
     </def-cat>
+    <def-cat n="directionlich_pr">
+      <cat-item lemma="östlich" tags="pr.*"/>
+      <cat-item lemma="südlich" tags="pr.*"/>
+    </def-cat>
     <!-- }}}
          {{{ words -->
     <def-cat n="um">
@@ -147,6 +151,9 @@
       <cat-item lemma="es" tags="prn.pers.p3.nt.sg.*"/>
       <cat-item lemma="prpers" tags="prn.*.p3.nt.sg.*"/>
     </def-cat>
+    <def-cat n="kein">
+      <cat-item lemma="kein" tags="det.ind.*"/>
+    </def-cat>
     <!-- }}}
          {{{ poses, groups etc. -->
     <def-cat n="daynumber">
@@ -157,9 +164,12 @@
       <cat-item tags="np.*"/>
     </def-cat>
     <def-cat n="cmp">
+      <cat-item tags="n.cmp"/>
+      <cat-item tags="n.cmp.*"/>
       <cat-item tags="n.*.cmp"/>
       <cat-item tags="n.*.cmp.*"/>
       <cat-item tags="atp.cmp"/>
+      <cat-item tags="atp.*.cmp"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.*"/>
@@ -422,6 +432,7 @@
     <def-var n="numtype"/>
     <def-var n="comparison"/>
     <def-var n="compstuff"/>
+    <def-var n="conpart"/>
   </section-def-vars>
   <!-- }}}
         {{{ macros -->
@@ -993,7 +1004,7 @@
             <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="von"/></equal>
           </test>
           <let>
-            <var n="adpcase"/><lit-tag v="ela"/>
+            <var n="adpcase"/><lit-tag v="abl"/>
           </let>
           <let>
             <var n="adpmaybe"/><lit v=""/>
@@ -1076,6 +1087,17 @@
             <var n="adpmaybe"/><lit v=""/>
           </let>
         </when>
+        <when>
+          <test>
+            <equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="für"/></equal>
+          </test>
+          <let>
+            <var n="adpcase"/><lit-tag v="all"/>
+          </let>
+          <let>
+            <var n="adpmaybe"/><lit v=""/>
+          </let>
+        </when>
         <!-- otherwise, clip adp and gen -->
         <otherwise>
           <let>
@@ -1101,8 +1123,11 @@
         <when>
           <test>
             <or>
+             <equal><clip pos="1" side="tl" part="lem"/><lit v="yksityis"/></equal>
+             <equal><clip pos="1" side="tl" part="lem"/><lit v="vähimmäis"/></equal>
              <equal><clip pos="1" side="tl" part="lem"/><lit v="yhteis"/></equal>
              <equal><clip pos="1" side="tl" part="lem"/><lit v="lähi"/></equal>
+             <equal><clip pos="1" side="tl" part="lem"/><lit v="uudelleen"/></equal>
            </or>
           </test>
           <let>
@@ -1121,33 +1146,76 @@
       <choose>
         <when>
           <test>
-            <equal><clip pos="1" side="sl" part="a_tense"/><lit-tag v="prs"/></equal>
+            <and>
+              <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="sg"/></equal>
+              <equal><clip pos="1" side="tl" part="a_tense"/><lit-tag v="past"/></equal>
+            </and>
+          </test>
+          <let>
+            <var n="conpart"/><lit-tag v="sg.conneg"/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="1" side="tl" part="a_tense"/><lit-tag v="past"/></equal>
+            </and>
+          </test>
+          <let>
+            <var n="conpart"/><lit-tag v="pl.conneg"/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="sl" part="a_number"/><lit-tag v="sg"/></equal>
+              <equal><clip pos="1" side="sl" part="a_tense"/><lit-tag v="pii"/></equal>
+            </and>
+          </test>
+          <let>
+            <var n="conpart"/><lit-tag v="sg.conneg"/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="sl" part="a_number"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="1" side="sl" part="a_tense"/><lit-tag v="pii"/></equal>
+            </and>
+          </test>
+          <let>
+            <var n="conpart"/><lit-tag v="pl.conneg"/>
+          </let>
+        </when>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="1" side="tl" part="a_tense"/><lit-tag v="pri"/></equal>
+            </and>
           </test>
           <let>
             <!-- XXX: sp-->
-            <var n="number"/><lit v=""/>
+            <var n="conpart"/><lit-tag v="conneg"/>
           </let>
         </when>
         <when>
           <test>
-            <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="sg"/></equal>
+            <and>
+              <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="sg"/></equal>
+              <equal><clip pos="1" side="tl" part="a_tense"/><lit-tag v="pri"/></equal>
+            </and>
           </test>
           <let>
-            <var n="number"/><lit-tag v="sg"/>
-          </let>
-        </when>
-        <when>
-          <test>
-            <equal><clip pos="1" side="tl" part="a_number"/><lit-tag v="pl"/></equal>
-          </test>
-          <let>
-            <var n="number"/><lit-tag v="pl"/>
+            <!-- XXX: sp-->
+            <var n="conpart"/><lit-tag v="conneg"/>
           </let>
         </when>
         <otherwise>
           <let>
             <!-- XXX: sp -->
-            <var n="number"/><lit v=""/>
+            <var n="conpart"/><lit-tag v="conneg"/>
           </let>
         </otherwise>
       </choose>
@@ -1159,6 +1227,26 @@
 
     <!-- }}}
          {{{ rules per lexeme for special brokenness -->
+    <rule comment="directionlich2adjgen: German directions are pr for some
+      reason but Finnish maybe adj.gen">
+      <!-- XXX: perhaps Östlich des dort <-> sieltä itään -->
+      <pattern>
+        <pattern-item n="directionlich_pr"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="directionlich" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="ADJ.SG.GEN"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <lit-tag v="adj.pos.sg.gen"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
     <rule comment="ex2np: totally broken deu analysis of 'de'">
       <pattern>
         <pattern-item n="ex2np"/>
@@ -1273,7 +1361,7 @@
       </action>
     </rule>
     <!-- }}}
-         {{{ rules for idioms and fixed expressions -->
+         {{{ rules for i dioms and fixed expressions -->
     <rule comment="weder adj noch adj: negv adj cnjcoo+negv adj">
       <pattern>
         <pattern-item n="weder_cc"/>
@@ -1335,6 +1423,33 @@
         <pattern-item n="seit"/>
         <pattern-item n="zeitwort"/>
         <pattern-item n="bevor"/>
+      </pattern>
+      <action>
+        <call-macro n="case-mangler">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="number-mangler">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk name="AdvP" case="caseFirstWord">
+            <tags>
+                <tag><lit-tag v="ADV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lem"/>    <!-- Jahr ~ vuosi -->
+              <clip pos="2" side="tl" part="a_noun"/> <!-- n -->
+              <var n="number"/>                       <!-- sg / pl -->
+              <lit-tag v="ill"/>                      <!-- ill -->
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="seit ZEIT: AIKOIHIN">
+      <pattern>
+        <pattern-item n="seit"/>
+        <pattern-item n="zeitwort"/>
       </pattern>
       <action>
         <call-macro n="case-mangler">
@@ -1908,6 +2023,55 @@
         </out>
       </action>
     </rule>
+    <rule comment="adp det nouns propn:  move case to first N of reformatted
+      genitive NP">
+      <pattern>
+        <pattern-item n="adp"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nominal"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <call-macro n="adp-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <chunk name="NP" case="caseFirstWord">
+            <tags>
+                <tag><lit-tag v="NP"/></tag>
+                <tag><lit-tag v="GEN"/></tag>
+                <tag><var n="adpcase"/></tag>
+            </tags>
+            <lu>
+              <clip pos="4" side="tl" part="lem"/>
+              <clip pos="4" side="tl" part="a_nominal"/>
+              <clip pos="4" side="tl" part="a_number"/>
+              <lit-tag v="gen"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="3" side="tl" part="lem"/>
+              <clip pos="3" side="tl" part="a_nominal"/>
+              <clip pos="3" side="tl" part="a_number"/>
+              <var n="adpcase"/>
+            </lu>
+            <b pos="2"/>
+            <lu>
+              <var n="adpmaybe"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
     <rule comment="adp det nouns nouns: drop case, det, move case to last N of
       compound(?) NP">
       <pattern>
@@ -2023,19 +2187,23 @@
         <call-macro n="number-mangler">
           <with-param pos="3"/>
         </call-macro>
+        <call-macro n="compstuff-mangler">
+          <with-param pos="2"/>
+        </call-macro>
         <out>
           <chunk name="NP" case="caseFirstWord">
             <tags>
                 <tag><lit-tag v="NP"/></tag>
+                <tag><lit-tag v="CMP"/></tag>
                 <tag><var n="adpcase"/></tag>
             </tags>
             <lu>
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_nominal"/>
-              <var n="number"/>
-              <lit-tag v="gen"/>
-            </lu>
-            <lu>
+              <var n="compstuff"/>
+              <!-- </lu>-->
+              <lit v="+"/>
+              <!--<lu>-->
               <clip pos="3" side="tl" part="lem"/>
               <clip pos="3" side="tl" part="a_nominal"/>
               <var n="number"/>
@@ -2288,9 +2456,9 @@
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_nominal"/>
               <var n="compstuff"/>
-            </lu>
-            <!-- recomp -->
-            <lu>
+              <!-- </lu>-->
+              <lit v="+"/>
+              <!--<lu>-->
               <clip pos="3" side="tl" part="lem"/>
               <clip pos="3" side="tl" part="a_noun"/>
               <var n="number"/>
@@ -2522,6 +2690,68 @@
       </action>
     </rule>
 
+    <rule comment="verb kein noun: en verb mikään noun">
+      <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="kein"/>
+        <pattern-item n="noun"/>
+      </pattern>
+      <action>
+        <call-macro n="conneg-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="tensemood-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="voice-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="pers-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="number-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk name="VP" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="V"/></tag>
+              <tag><lit-tag v="NEG"/></tag>
+            </tags>
+            <lu>
+              <lit v="ei"/>
+              <lit-tag v="vblex.neg.actv"/>
+              <var n="pers"/>
+            </lu>
+            <b/>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_verb"/>
+              <lit-tag v="actv"/>
+              <var n="tense"/>
+              <var n="conpart"/>  <!-- sg.conneg -->
+            </lu>
+            <b/>
+            <lu>
+              <lit v="mikään"/>
+              <lit-tag v="prn"/>
+              <var n="number"/>
+              <lit-tag v="nom"/>
+            </lu>
+            <b/>
+            <lu>
+              <clip pos="3" side="tl" part="lem"/>
+              <clip pos="3" side="tl" part="a_nominal"/>
+              <var n="number"/>
+              <var n="case"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
     <rule comment="verb neg pcp: ei oltu tehty">
       <pattern>
         <pattern-item n="verb"/>
@@ -2540,6 +2770,9 @@
         </call-macro>
         <call-macro n="number-mangler">
           <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="3"/>
         </call-macro>
         <out>
           <chunk name="VP" case="caseFirstWord">
@@ -2605,8 +2838,7 @@
               <clip pos="1" side="tl" part="a_verb"/>
               <lit-tag v="actv"/>
               <var n="tense"/>
-              <var n="number"/>
-              <lit-tag v="conneg"/>
+              <var n="conpart"/>
             </lu>
           </chunk>
         </out>
@@ -2644,8 +2876,7 @@
               <clip pos="2" side="tl" part="a_verb"/>
               <lit-tag v="actv"/>
               <var n="tense"/>
-              <var n="number"/>
-              <lit-tag v="conneg"/>
+              <var n="conpart"/>
             </lu>
           </chunk>
         </out>
@@ -2674,6 +2905,7 @@
           <chunk name="NP" case="caseFirstWord">
             <tags>
               <tag><lit-tag v="N"/></tag>
+              <tag><lit-tag v="CMP"/></tag>
           </tags>
           <!-- usually no dets...
             <lu>
@@ -2688,13 +2920,62 @@
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_nominal"/>
               <var n="compstuff"/>
+              <!-- </lu>-->
+              <lit v="+"/>
+              <!--<lu>-->
+              <clip pos="3" side="tl" part="lem"/>
+              <clip pos="3" side="tl" part="a_noun"/>
+              <clip pos="3" side="tl" part="a_number"/>
+              <var n="case"/>
             </lu>
-            <!-- no space -->
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="adp prndem propn: deu fail~prndem is actually det">
+      <pattern>
+        <pattern-item n="adp"/>
+        <pattern-item n="prndem"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <call-macro n="adp-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="case-mangler">
+          <with-param pos="3"/>
+        </call-macro>
+        <call-macro n="number-mangler">
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk name="NP" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="N"/></tag>
+              <tag><var n="number"/></tag>
+              <tag><var n="case"/></tag>
+            </tags>
+          <!-- usually no dets...
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_noun"/>
+              <clip pos="1" side="tl" part="a_number"/>
+              <clip pos="1" side="tl" part="a_case"/>
+            </lu>
+            <b pos="1"/>
+           -->
             <lu>
               <clip pos="3" side="tl" part="lem"/>
               <clip pos="3" side="tl" part="a_noun"/>
-              <clip pos="1" side="tl" part="a_number"/>
-              <var n="case"/>
+              <var n="number"/>
+              <var n="adpcase"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <var n="adpmaybe"/>
             </lu>
           </chunk>
         </out>
@@ -2735,7 +3016,7 @@
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_noun"/>
               <var n="number"/>
-              <clip pos="1" side="tl" part="a_case"/>
+              <var n="case"/>
             </lu>
           </chunk>
         </out>
@@ -2776,7 +3057,7 @@
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_noun"/>
               <var n="number"/>
-              <clip pos="1" side="tl" part="a_case"/>
+              <var n="case"/>
             </lu>
           </chunk>
         </out>
@@ -3079,13 +3360,32 @@
               <clip pos="1" side="tl" part="lem"/>
               <clip pos="1" side="tl" part="a_nominal"/>
               <var n="compstuff"/>
-            </lu>
-              <!-- no blank -->
-            <lu>
+              <!-- </lu>-->
+              <lit v="+"/>
+              <!--<lu>-->
               <clip pos="2" side="tl" part="lem"/>
               <clip pos="2" side="tl" part="a_noun"/>
               <clip pos="2" side="tl" part="a_number"/>
               <var n="case"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="comps: stray compounds :-(((">
+      <pattern>
+        <pattern-item n="cmp"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="NP" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="CMP"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <lit v="-"/>
+              <lit-tag v="compound-only-L"/>
             </lu>
           </chunk>
         </out>

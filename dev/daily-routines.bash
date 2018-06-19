@@ -7,14 +7,27 @@ fi
 DAILYMAIL=$(mktemp -t apertium-fin-deu-dailies.XXXXXXXXXX )
 make
 egrep -v '^#!' ${DAILYMAIL_SOURCE} > ${DAILYMAIL}
-if ! apertium -d . deu-fin-debug < ${DAILYMAIL} |\
+if ! apertium -f line -d . deu-fin-debug < ${DAILYMAIL} |\
     fgrep --colour=always '@' ; then
-    if ! apertium -d . deu-fin-debug < ${DAILYMAIL} |\
+    if ! apertium -f line -d . deu-fin-debug < ${DAILYMAIL} |\
         fgrep --colour=always '#' ; then
-        apertium -d . deu-fin < ${DAILYMAIL}
+        apertium -f line -d . deu-fin < ${DAILYMAIL}
+        echo
+        echo "Translation is testvoc clean, commit?"
+        select a in yes no ; do
+            if test x$a = xyes ; then
+                git add apertium-fin-deu.fin-deu.dix ${DAILYMAIL_SOURCE}
+                git commit -m "daily news $(date --iso)"
+            elif test x$a = xno ; then
+                echo commit cancelled
+            else
+                echo Unknown answer $a
+            fi
+            break
+        done
     else
         echo bidix miss candidates in apertium-fin:
-        apertium -d . deu-fin-debug < ${DAILYMAIL} |\
+        apertium -f line -d . deu-fin-debug < ${DAILYMAIL} |\
             egrep -o '#[^<]*' |\
             tr -d '#<' |\
             sort |\
@@ -23,7 +36,7 @@ if ! apertium -d . deu-fin-debug < ${DAILYMAIL} |\
             fgrep '<'
     fi
 else
-    apertium -d . deu-fin-debug < ${DAILYMAIL} |\
+    apertium -f line -d . deu-fin-debug < ${DAILYMAIL} |\
         egrep -o '@[^<]*' |\
         tr -d '@<' |\
         sort |\

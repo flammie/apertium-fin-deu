@@ -9,11 +9,20 @@
     <def-cat n="adj">
       <cat-item tags="adj.*"/>
     </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num.*"/>
+    </def-cat>
     <def-cat n="verb">
       <cat-item tags="vblex.*"/>
       <cat-item tags="vaux.*"/>
       <cat-item tags="vbmod.*"/>
       <cat-item tags="vbser.*"/>
+    </def-cat>
+    <def-cat n="pastverb">
+      <cat-item tags="vblex.*.past.*"/>
+      <cat-item tags="vaux.*.past.*"/>
+      <cat-item tags="vbmod.*.past.*"/>
+      <cat-item tags="vbser.*.past.*"/>
     </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
@@ -44,6 +53,9 @@
     </def-attr>
     <def-attr n="a_adj">
       <attr-item tags="adj"/>
+    </def-attr>
+    <def-attr n="a_num">
+      <attr-item tags="num"/>
     </def-attr>
     <def-attr n="a_gender">
       <attr-item tags="m"/>
@@ -97,7 +109,24 @@
             <var n="number"/>
             <lit v=""/>
           </let>
-    </def-macro>
+        </def-macro>
+        <def-macro n="num-mangler" npar="1">
+          <choose>
+            <when>
+              <test>
+                <equal><clip pos="1" side="sl" part="lem"/><lit v="yksi"/></equal>
+              </test>
+              <let>
+                <clip pos="1" side="tl" part="a_number"/><lit-tag v="sg"/>
+              </let>
+            </when>
+            <otherwise>
+              <let>
+                <clip pos="1" side="tl" part="a_number"/><lit-tag v="pl"/>
+              </let>
+            </otherwise>
+          </choose>
+        </def-macro>
     <def-macro n="case-mangler" npar="1">
       <choose>
         <when>
@@ -163,6 +192,34 @@
   <section-rules>
     <!-- }}}
          {{{ single word fall-backs -->
+    <rule comment="Compose syntactic past form">
+      <pattern>
+        <pattern-item n="pastverb"/>
+      </pattern>
+      <action>
+        <call-macro n="tensemood-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="vp" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="VP.PAST"/></tag>
+            </tags>
+            <lu>
+              <lit v="haben"/>
+              <lit-tag v="vbhaver.pri"/>
+              <clip pos="1" side="tl" part="a_prsnum"/>
+            </lu>
+            <b pos="0"/>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_verb"/>
+              <lit-tag v="pp"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
     <rule comment="Drop voice from verbs, mangle tense mood">
       <pattern>
         <pattern-item n="verb"/>
@@ -229,6 +286,28 @@
               <clip pos="1" side="tl" part="lem"/>
               <clip pos="1" side="tl" part="a_adj"/>
               <lit-tag v="sint.attr"/> <!-- don't know m/f...-->
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="Drop case, mangle num of nums... German is weirdly tagged">
+      <pattern>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <call-macro n="num-mangler">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="nump" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="NumP"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_num"/>
+              <clip pos="1" side="tl" part="a_number"/>
             </lu>
           </chunk>
         </out>
